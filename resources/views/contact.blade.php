@@ -23,7 +23,8 @@
         </div>
         <div class="confull">
             <div class="formcontainer">
-                <form method="post" action="includes/email.php" autocomplete="off">
+                <form method="post" action="{{ route('send-contact-form') }}" autocomplete="off">
+                    @csrf
                     <label for="email">Email</label>
                     <input type="text" id="email" name="email" placeholder="example@domain.com" required>
                     <label for="subject">Subject</label>
