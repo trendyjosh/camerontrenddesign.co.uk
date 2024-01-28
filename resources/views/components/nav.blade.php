@@ -13,7 +13,12 @@
         <a href="{{ route('services') }}" class="menu">Services</a>
         <a href="{{ route('landing') }}#projects" class="menu">Portfolio</a>
         <a href="{{ route('about') }}" class="menu">About</a>
-        <a href="javascript:void(0);" class="icon" onclick="dropDown()"><img src="{{ asset('media/bars.png') }}"></a>
+        <a href="javascript:void(0);" class="icon" onclick="dropDown()">
+            <img id="icon-black" src="{{ asset('media/bars.png') }}">
+            @isset($index)
+                <img id="icon-white" src="{{ asset('media/bars2.png') }}">
+            @endisset
+        </a>
     </div>
 </header>
 <script type="text/javascript">

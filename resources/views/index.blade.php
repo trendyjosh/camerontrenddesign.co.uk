@@ -74,7 +74,7 @@
             <a href="contact.php"><h2>Get in Touch</h2></a>
         </div>
     </div>
-    <script>
+    <script type="text/javascript">
         window.onresize = window.onload = function() {
             if (screen.width > 1100){
                 window.onscroll = function() {scrollFunction()};
