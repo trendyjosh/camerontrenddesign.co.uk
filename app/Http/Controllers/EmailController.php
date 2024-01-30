@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\SendContactFormRequest;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -12,14 +13,19 @@ class EmailController extends Controller
     /**
      * Submit the contact form.
      */
-    public function sendContactForm(Request $request): RedirectResponse
+    public function sendContactForm(SendContactFormRequest $request): RedirectResponse
     {
-        Mail::raw($request->input('body'), function ($message) use ($request) {
+        // Get validated input
+        $formData = $request->validated();
+
+        // Send contact email
+        Mail::raw($formData['body'], function ($message) use ($formData) {
             $message
                 ->to('contact@camerontrenddesign.co.uk')
-                ->from($request->input('email'))
-                ->subject($request->input('subject'));
+                ->from($formData['email'])
+                ->subject($formData['subject']);
         });
+
         return Redirect::route('contact');
     }
 }
