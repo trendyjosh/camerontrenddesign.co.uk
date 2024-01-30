@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\EmailController;
 use Illuminate\Support\Facades\Route;
 
@@ -29,4 +30,17 @@ Route::controller(PageController::class)->group(function () {
 Route::controller(EmailController::class)->group(function () {
     // Submit contact form
     Route::post('send-contact-form', 'sendContactForm')->name('send-contact-form');
+});
+
+Route::controller(ProjectController::class)->group(function () {
+    // Wildlife garden project
+    Route::get('wildlife-garden', 'wildlifeGarden')->name('wildlife-garden');
+    // Barn garden project
+    Route::get('barn-conversion', 'barnConversion')->name('barn-conversion');
+    // Large garden project
+    Route::get('large-garden', 'largeGarden')->name('large-garden');
+    // Small garden project
+    Route::get('small-garden', 'smallGarden')->name('small-garden');
+    // Town garden project
+    Route::get('town-garden', 'townGarden')->name('town-garden');
 });

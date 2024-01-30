@@ -20,31 +20,31 @@
         </div>
         <div class="testflex">
             <div class="testitem">
-                <a href="wildlife_garden.php"><div class="testcontain">
+                <a href="{{ route('wildlife-garden') }}"><div class="testcontain">
                         <img class="increase" src="{{ asset('media/wildlife_garden_thumbnail.jpg') }}" alt="WildlifeGarden">
                         <div class="text"><h3>Wildlife Garden</h3><small>Kent</small></div>
                     </div></a>
             </div>
             <div class="testitem">
-                <a href="town_garden.php"><div class="testcontain">
+                <a href="{{ route('town-garden') }}"><div class="testcontain">
                         <img class="increase" src="{{ asset('media/town_garden_thumbnail.jpg') }}" alt="SuburbanGarden">
                         <div class="text"><h3>Town Garden</h3><small>South East London</small></div>
                     </div></a>
             </div>
             <div class="testitem">
-                <a href="barn_conversion.php"><div class="testcontain">
+                <a href="{{ route('barn-conversion') }}"><div class="testcontain">
                         <img class="increase" src="{{ asset('media/contemporary_garden_thumbnail.png') }}" alt="ContemporaryGarden">
                         <div class="text"><h3>Contemporary Garden</h3><small>Kent</small></div>
                     </div></a>
             </div>
             <div class="testitem">
-                <a href="large_garden.php"><div class="testcontain">
+                <a href="{{ route('large-garden') }}"><div class="testcontain">
                         <img class="increase" src="{{ asset('media/large_garden_thumbnail.jpg') }}" alt="LargeGarden">
                         <div class="text"><h3>Large Garden</h3><small>Kent</small></div>
                     </div></a>
             </div>
             <div class="testitem">
-                <a href="small_garden.php"><div class="testcontain">
+                <a href="{{ route('small-garden') }}"><div class="testcontain">
                         <img class="increase" src="{{ asset('media/small_garden_thumbnail.jpg') }}" alt="TownGarden">
                         <div class="text"><h3>Small Garden</h3><small>Kent</small></div>
                     </div></a>
@@ -68,10 +68,10 @@
             <p style="margin-top: 30px">Client, Tonbridge</p>
         </div>
         <div class="fullwb" style="border-top-style: solid; border-width: thin;">
-            <a href="contact.php"><h1>Contact</h1></a>
+            <a href="{{ route('contact') }}"><h1>Contact</h1></a>
         </div>
         <div class="mainfull" style="height: 100px;">
-            <a href="contact.php"><h2>Get in Touch</h2></a>
+            <a href="{{ route('contact') }}"><h2>Get in Touch</h2></a>
         </div>
     </div>
     <script type="text/javascript">
