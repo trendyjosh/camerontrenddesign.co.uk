@@ -1,110 +1,55 @@
 <x-layout :index="true">
-    <div id="main_image" class="resize" style="background-image:url({{ asset('media/pink_slide.jpg') }}); background-size:cover;">
-        <div class="centered">
-            <h1 id="resize_text_small">Cameron Trend</h1>
-            <h1 id="resize_text">Garden Design</h1>
-        </div>
-        <svg class="arrows logo-white">
-            <path d="M0 40 L30 72 L60 40"></path>
-        </svg>
-    </div>
-    <div class="main">
-        <div class="maintext">
-            <p style="margin-top: 30px">Cameron Trend Design is a garden and landscape design practice based in Kent, covering the South East.</p>
-            <p style="margin-top: 30px">With over 8 years’ horticultural experience, Cameron has gained an in-depth knowledge of plants, outdoor spaces and how they impact our modern-day, busy lifestyles. Combining his creative passion for art and horticulture he creates bespoke designs tailored to his clients and their requirements.</p>
-            <p style="margin-top: 30px">All aspects of garden and landscape design are covered; from small planting schemes, to full scale garden estate plans, following the process through to tender.</p>
-            <p style="margin-top: 30px">Please take your time to look through the website. Do not hesitate to contact Cameron for further enquiries.</p>
-        </div>
-        <div class="fullwb" style="border-top-style: solid; border-width: thin;"  id="projects">
-            <h1 style="margin-bottom: 0;">Current Projects</h1>
-        </div>
-        <div class="testflex">
-            <div class="testitem">
-                <a href="{{ route('wildlife-garden') }}"><div class="testcontain">
-                        <img class="increase" src="{{ asset('media/wildlife_garden_thumbnail.jpg') }}" alt="WildlifeGarden">
-                        <div class="text"><h3>Wildlife Garden</h3><small>Kent</small></div>
-                    </div></a>
-            </div>
-            <div class="testitem">
-                <a href="{{ route('town-garden') }}"><div class="testcontain">
-                        <img class="increase" src="{{ asset('media/town_garden_thumbnail.jpg') }}" alt="SuburbanGarden">
-                        <div class="text"><h3>Town Garden</h3><small>South East London</small></div>
-                    </div></a>
-            </div>
-            <div class="testitem">
-                <a href="{{ route('barn-conversion') }}"><div class="testcontain">
-                        <img class="increase" src="{{ asset('media/contemporary_garden_thumbnail.png') }}" alt="ContemporaryGarden">
-                        <div class="text"><h3>Contemporary Garden</h3><small>Kent</small></div>
-                    </div></a>
-            </div>
-            <div class="testitem">
-                <a href="{{ route('large-garden') }}"><div class="testcontain">
-                        <img class="increase" src="{{ asset('media/large_garden_thumbnail.jpg') }}" alt="LargeGarden">
-                        <div class="text"><h3>Large Garden</h3><small>Kent</small></div>
-                    </div></a>
-            </div>
-            <div class="testitem">
-                <a href="{{ route('small-garden') }}"><div class="testcontain">
-                        <img class="increase" src="{{ asset('media/small_garden_thumbnail.jpg') }}" alt="TownGarden">
-                        <div class="text"><h3>Small Garden</h3><small>Kent</small></div>
-                    </div></a>
-            </div>
-        </div>
-        <div class="fullwb" style="border-top-style: solid; border-width: thin;">
-            <h1 style="margin-bottom: 0;">Testimonials</h1>
-        </div>
-        <div class="maintext">
-            <p style="font-style: italic;">"Cameron instinctively understood what had to be done in a particular small awkward area of my garden.
-
-                He soon realised what I liked and I was included in the whole process of the design from start to finish and it changed regularly!
-
-                I was shown many virtual images of the finished area until I was happy.
-
-                He ordered quality plants and planted them when he said he would.
-
-                They look good and I am looking forward to seeing them mature.
-
-                I would highly recommend him."</p>
-            <p style="margin-top: 30px">Client, Tonbridge</p>
-        </div>
-        <div class="fullwb" style="border-top-style: solid; border-width: thin;">
-            <a href="{{ route('contact') }}"><h1>Contact</h1></a>
-        </div>
-        <div class="mainfull" style="height: 100px;">
-            <a href="{{ route('contact') }}"><h2>Get in Touch</h2></a>
+    <div class="ct-header__hero">
+        <img src="{{ asset('media/pink_slide.jpg') }}" alt="Flowers" class="ct-header__hero-image">
+        <div class="ct-header__hero-title">
+            <h2>Cameron Trend</h2>
+            <h1>Garden Design</h1>
+            <i class="fa-solid fa-computer-mouse"></i>
         </div>
     </div>
-    <script type="text/javascript">
-        window.onresize = window.onload = function() {
-            if (screen.width > 1100){
-                window.onscroll = function() {scrollFunction()};
-                document.querySelector(".topnav").classList.remove("topnav-down");
-                document.querySelectorAll(".menu").forEach(a=>a.classList.add("menu-top"));
-            } else {
-                window.onscroll = function() {smallScrollFunction()};
-            }
-        }
-
-        function smallScrollFunction() {
-            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-                document.querySelectorAll(".menu").forEach(a=>a.classList.remove("menu-top"));
-                document.querySelector(".topnav").classList.add("topnav-down");
-            } else {
-                document.querySelectorAll(".menu").forEach(a=>a.classList.add("menu-top"));
-                document.querySelector(".topnav").classList.remove("topnav-down");
-            }
-        }
-
-        function scrollFunction() {
-            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-                document.getElementById("main_image").classList.add("main-image-small");
-                document.querySelectorAll(".menu").forEach(a=>a.classList.remove("menu-top"));
-                document.querySelector(".topnav").classList.add("topnav-down");
-            } else {
-                document.getElementById("main_image").classList.remove("main-image-small");
-                document.querySelectorAll(".menu").forEach(a=>a.classList.add("menu-top"));
-                document.querySelector(".topnav").classList.remove("topnav-down");
-            }
-        }
-    </script>
+    <section>
+        <div class="ct-text">
+            <p>Cameron Trend Design is a garden and landscape design practice based in Kent, covering the South East.</p>
+            <p>With over 8 years’ horticultural experience, Cameron has gained an in-depth knowledge of plants, outdoor spaces and how they impact our modern-day, busy lifestyles. Combining his creative passion for art and horticulture he creates bespoke designs tailored to his clients and their requirements.</p>
+            <p>All aspects of garden and landscape design are covered; from small planting schemes, to full scale garden estate plans, following the process through to tender.</p>
+            <p>Please take your time to look through the website. Do not hesitate to contact Cameron for further enquiries.</p>
+        </div>
+    </section>
+    <section class="ct-portfolio" id="projects">
+        <div class="ct-title">
+            <h2>Current Projects</h2>
+        </div>
+        <div class="ct-portfolio__container">
+            @foreach($projects as $project)
+            <a class="ct-portfolio__item" href="{{ route('projects.show', $project->slug) }}">
+                <div class="ct-portfolio__item-image">
+                    <img class="increase" src="images/thumbs/{{ $project->thumb }}" alt="{{ $project->title }}">
+                    <div class="ct-portfolio__item-text">
+                        <h3>{{ $project->title }}</h3>
+                        <h4>Kent</h4>
+                    </div>
+                </div>
+            </a>
+            @endforeach
+        </div>
+    </section>
+    <section class="ct-testimonials">
+        <div class="ct-title">
+            <h2>Testimonials</h2>
+        </div>
+        <div class="ct-testimonials__container">
+            <div class="ct-testimonials__item">
+                <p class="ct-testimonials__item-text">"Cameron instinctively understood what had to be done in a particular small awkward area of my garden. He soon realised what I liked and I was included in the whole process of the design from start to finish and it changed regularly! I was shown many virtual images of the finished area until I was happy. He ordered quality plants and planted them when he said he would. They look good and I am looking forward to seeing them mature. I would highly recommend him."</p>
+                <p>Client, Tonbridge</p>
+            </div>
+        </div>
+    </section>
+    <section class="section-bottom">
+        <div class="ct-title">
+            <h2>Contact</h2>
+        </div>
+        <a href="{{ route('contact') }}" class="ct-btn">
+            Get in Touch
+        </a>
+    </section>
 </x-layout>
