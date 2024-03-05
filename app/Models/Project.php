@@ -2,43 +2,26 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use Illuminate\Support\Str;
 
-class Project extends Model
+class Project extends Page
 {
     use HasFactory;
 
-    protected $fillable = [
-        "title",
-        "hero",
-        "thumb",
-        "position",
-        "status"
-    ];
-
-    protected $appends = ['slug'];
-
     /**
-     * Retrieve the project using title instead of id.
+     * Create a new Eloquent model instance.
      */
-    public function resolveRouteBinding($value, $field = null)
+    public function __construct(array $attributes = [])
     {
-        $formattedTitle = Str::headline($value);
-        return $this->where('title', $formattedTitle)->firstOrFail();
-    }
+        parent::__construct($attributes);
 
-    /**
-     *  Generate and get slugs for project from the title.
-     */
-    public function slug(): Attribute
-    {
-        return Attribute::make(
-            get: fn (mixed $value) => strval(Str::of($this->title)->kebab()),
-        );
+        // Merge new fillable attributes
+        $this->mergeFillable([
+            "thumb",
+            "position",
+            "status"
+        ]);
     }
 
     /**
