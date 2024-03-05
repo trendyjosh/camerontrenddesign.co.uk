@@ -23,7 +23,7 @@
             @foreach($projects as $project)
             <a class="ct-portfolio__item" href="{{ route('projects.show', $project->slug) }}">
                 <div class="ct-portfolio__item-image">
-                    <img class="increase" src="images/thumbs/{{ $project->thumb }}" alt="{{ $project->title }}">
+                    <img class="increase" src="{{ asset($project->thumb) }}" alt="{{ $project->title }}">
                     <div class="ct-portfolio__item-text">
                         <h3>{{ $project->title }}</h3>
                         <h4>Kent</h4>
