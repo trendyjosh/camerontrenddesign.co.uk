@@ -19,12 +19,8 @@ use Illuminate\Support\Facades\Route;
 Route::controller(PageController::class)->group(function () {
     // Landing page
     Route::get('/', 'index')->name('landing');
-    // about page
-    Route::get('/about', 'about')->name('about');
-    // Services page
-    Route::get('/services', 'services')->name('services');
-    // Contact page
-    Route::get('/contact', 'contact')->name('contact');
+    // Show page
+    Route::get('/{page}', 'show')->name('page');
 });
 
 Route::controller(EmailController::class)->group(function () {
