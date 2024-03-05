@@ -1,10 +1,5 @@
 <x-layout>
-    <div class="ct-main__hero-heading">
-        <img src="" alt="About Image">
-        <div class="ct-main__hero-overlay">
-            <h1>About</h1>
-        </div>
-    </div>
+    <x-hero :page="$page" />
     <section class="ct-about">
         <div class="ct-image">
             <img width="400" height="719" src="{{ asset('media/cameron_title.jpg') }}" alt="Cameron Trend Headshot">

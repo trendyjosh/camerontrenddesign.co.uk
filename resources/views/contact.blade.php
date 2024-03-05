@@ -1,10 +1,5 @@
 <x-layout>
-    <div class="ct-main__hero-heading">
-        <img src="" alt="Contact Image">
-        <div class="ct-main__hero-overlay">
-            <h1>Contact</h1>
-        </div>
-    </div>
+    <x-hero :page="$page" />
     <section>
         <div class="ct-text">
             <p>Feel free to reach out to Cameron by phone, email, social media or the contact form below.</p>

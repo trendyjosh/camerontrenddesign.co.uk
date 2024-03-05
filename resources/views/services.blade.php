@@ -1,11 +1,5 @@
 <x-layout>
-    <div class="ct-main__hero-heading">
-        <img src="" alt="Services Image">
-        <div class="ct-main__hero-overlay">
-            <h1>Services</h1>
-            <h2>The creative endeavour to implement visual ideas into gardens</h2>
-        </div>
-    </div>
+    <x-hero :page="$page" />
     <section class="ct-services">
         <div class="ct-image">
             <div id="pencilimage">
