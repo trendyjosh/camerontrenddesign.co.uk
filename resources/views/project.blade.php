@@ -1,10 +1,5 @@
 <x-layout>
-    <div class="ct-main__hero-heading">
-        <img src="{{ asset($project->hero) }}" alt="{{ $project->title }} Image">
-        <div class="ct-main__hero-overlay">
-            <h1>{{ $project->title }}</h1>
-        </div>
-    </div>
+    <x-hero :page="$project" />
     <section class="ct-portfolio">
         <div class="ct-portfolio__content">
             @foreach ( $project->content as $content )
