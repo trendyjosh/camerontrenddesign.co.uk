@@ -48,7 +48,7 @@
         <div class="ct-title">
             <h2>Contact</h2>
         </div>
-        <a href="{{ route('contact') }}" class="ct-btn">
+        <a href="{{ route('page', 'contact') }}" class="ct-btn">
             Get in Touch
         </a>
     </section>

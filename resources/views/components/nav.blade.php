@@ -21,19 +21,19 @@
         </label>
         <ul class="ct-nav__list">
             <li class="ct-nav__list-item">
-                <a href="{{ route('about') }}" class="menu menu-top">About</a>
+                <a href="{{ route('page', 'about') }}" class="menu menu-top">About</a>
             </li>
             <li class="ct-nav__list-item">
                 <a href="{{ route('landing') }}#projects" class="menu menu-top">Portfolio</a>
             </li>
             <li class="ct-nav__list-item">
-                <a href="{{ route('services') }}" class="menu menu-top">Services</a>
+                <a href="{{ route('page', 'services') }}" class="menu menu-top">Services</a>
             </li>
             {{-- <li class="ct-nav__list-item">
                 <a href="{{ route('instagram') }}" class="menu menu-top">Instagram</a>
             </li> --}}
             <li class="ct-nav__list-item">
-                <a href="{{ route('contact') }}" class="menu menu-top">Contact</a>
+                <a href="{{ route('page', 'contact') }}" class="menu menu-top">Contact</a>
             </li>
         </ul>
     </nav>
