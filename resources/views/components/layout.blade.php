@@ -25,10 +25,10 @@
     {{ $slot }}
     <footer class="ct-footer">
         <div class="ct-footer__contact">
-            <div class="ct-footer__contact-info">
+            <div class="contact-info">
                 <a href="tel:07581647855">07581 647855</a><span> | </span><a href="mailto:cameron.trend@gmail.com">cameron.trend@gmail.com</a>
             </div>
-            <div class="ct-footer__contact-info">
+            <div class="contact-info">
                 <a href="https://www.facebook.com/camerontrendgardendesign" target="_blank"><i class="fa-brands fa-facebook"></i></a>
                 <a href="https://www.pinterest.co.uk/camerontrend/" target="_blank"><i class="fa-brands fa-pinterest"></i></a>
                 <a href="https://www.instagram.com/camerontrenddesign/" target="_blank"><i class="fa-brands fa-instagram"></i></a>

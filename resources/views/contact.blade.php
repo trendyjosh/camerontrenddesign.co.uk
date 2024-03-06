@@ -9,7 +9,7 @@
         <article>
             <p><a href="mailto:contact@camerontrenddesign.co.uk"><i class="fa-solid fa-envelope"></i> contact@camerontrenddesign.co.uk</a></p>
             <p><a href="tel:07581647855"><i class="fa-solid fa-phone"></i> 07581 647855</a></p>
-            <p class="ct-footer__contact-info">
+            <p class="contact-info">
                 <a href="https://www.facebook.com/camerontrendgardendesign" target="_blank"><i class="fa-brands fa-facebook"></i></a>
                 <a href="https://www.pinterest.co.uk/camerontrend/" target="_blank"><i class="fa-brands fa-pinterest"></i></a>
                 <a href="https://www.instagram.com/camerontrenddesign/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
