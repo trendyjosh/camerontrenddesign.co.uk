@@ -89,8 +89,7 @@ section { max-width: 1250px; margin: 0 auto; padding-top: 50px; }
 .ct-image img { width: 100%; }
 .section-bottom { margin-bottom: 100px; padding-top: 100px; }
 .section-bottom a { display: initial; }
-.ct-btn { padding: 12px; min-width: 120px; border-radius: 0; border: 1px solid #000000; background: none;
-    cursor: pointer; transition: 0.3s;  }
+.ct-btn { padding: 12px; min-width: 120px; border-radius: 0; border: 1px solid #000000; background: none; cursor: pointer; transition: 0.3s; color: #000000; }
 .ct-btn:hover { background: #000000; color: #ffffff; }
 
 /* Portfolio Pages */
