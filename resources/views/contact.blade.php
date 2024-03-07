@@ -22,13 +22,15 @@
                     <input type="text" id="email" name="email" required placeholder=" ">
                     <span>Email</span>
                 </label>
-                <select name="subject" id="subject" required>
-                    <option value="" disabled selected>Subject...</option>
-                    <option value="Design Consultation">Design Consultation</option>
-                    <option value="Garden Design">Garden Design</option>
-                    <option value="Planting Plan">Planting Plan</option>
-                    <option value="General Enquiry">General Enquiry</option>
-                </select>
+                <div class="ct-select">
+                    <select name="subject" id="subject" required>
+                        <option value="" disabled selected>Subject...</option>
+                        <option value="Design Consultation">Design Consultation</option>
+                        <option value="Garden Design">Garden Design</option>
+                        <option value="Planting Plan">Planting Plan</option>
+                        <option value="General Enquiry">General Enquiry</option>
+                    </select>
+                </div>
                 <label for="body">
                     <textarea id="body" name="body" placeholder="" required></textarea>
                     <span>Message</span>

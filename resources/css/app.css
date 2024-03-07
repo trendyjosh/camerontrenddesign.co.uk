@@ -123,23 +123,34 @@ section { max-width: 1250px; margin: 0 auto; padding-top: 50px; }
 .ct-contact article { display: flex; flex-direction: column; align-items: center; justify-content: center; }
 .ct-contact p { word-break: break-word; }
 
+/* Form */
 .ct-form { width: 100%; max-width: 600px; }
-.ct-form label, .ct-form select { display: block; position: relative; margin-top: 6px; margin-bottom: 16px; }
+.ct-form label, .ct-select { display: block; position: relative; margin-top: 6px; margin-bottom: 16px; }
 .ct-form label { padding: 24px 0 0; }
-.ct-form select { padding: 12px 0; text-indent: 0px; }
-.ct-form input { padding: 0 0 12px 3px; }
+.ct-form input, .ct-select { padding: 0 0 12px 3px; }
 .ct-form option { text-align: initial; padding: 0; }
 .ct-form label span { position: absolute; left: 3px; top: 20px; transition: 0.3s; }
 .ct-form label input:focus~span, .ct-form label textarea:focus~span, .ct-form label input:not(:placeholder-shown)~span, .ct-form label textarea:not(:placeholder-shown)~span { top: 6px; font-size: initial; }
-.ct-form input, .ct-form textarea, .ct-form select { width: 100%; border: none; border-bottom: 1px solid #000000; z-index: 10; }
+.ct-form input, .ct-form textarea, .ct-select { width: 100%; border: none; border-bottom: 1px solid #000000; z-index: 10; }
 .ct-form input:focus-visible, .ct-form textarea:focus-visible { outline: none; }
-.ct-form input, .ct-form select, .ct-form textarea, .ct-form form, .ct-form label span, .ct-form button, .ct-contact p { font-size: 1.5rem; }
-.ct-form label, .ct-form input, .ct-form textarea, .ct-form select { text-align: initial; }
+.ct-form input, .ct-select, .ct-form textarea, .ct-form form, .ct-form label span, .ct-form button, .ct-contact p { font-size: 1.5rem; }
+.ct-form label, .ct-form input, .ct-form textarea, .ct-select--selected, .ct-select__items div { text-align: initial; }
 .ct-form form { text-align: initial; display: flex; flex-direction: column; flex-wrap: wrap; }
 .ct-form textarea { resize: vertical; padding: 0 0 0 3px; }
 .ct-form select option:disabled { color: #d3d3d3; }
-.ct-form input[type="text"], .ct-form select, .ct-form textarea { flex-basis: 100%; }
+.ct-form input[type="text"], .ct-select, .ct-form textarea { flex-basis: 100%; }
 .ct-form input[type="submit"]:hover { cursor: pointer; background-color: #fff; }
+
+/* Custom Select */
+.ct-select select { display: none; }
+.ct-select--selected:after { position: absolute; content: ""; top: 14px; right: 10px; width: 0; height: 0; border: 6px solid transparent; border-color: #000000 transparent transparent transparent; }
+.ct-select--selected.ct-select__arrow--active:after { border-color: transparent transparent #000000 transparent; top: 7px; }
+.ct-select__items div,.ct-select--selected { color: #000000; cursor: pointer; }
+.ct-select__items { position: absolute; background-color: #FFFFFF; top: 100%; left: 0; right: 0; z-index: 99; }
+.ct-select__items div { padding: 8px 3px; }
+.ct-select--hide { display: none; }
+.ct-select__items div:hover, .ct-select__item--selected { background-color: rgba(0, 0, 0, 0.1); }
+
 
 /* Footer */
 .ct-footer { padding: 50px 100px; box-shadow: 0 0 10px rgb(0 0 0 / 30%); }
