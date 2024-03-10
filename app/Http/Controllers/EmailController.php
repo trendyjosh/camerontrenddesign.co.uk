@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\SendContactFormRequest;
+use App\Mail\EnquiryMail;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -19,12 +20,12 @@ class EmailController extends Controller
         $formData = $request->validated();
 
         // Send contact email
-        Mail::raw($formData['body'], function ($message) use ($formData) {
-            $message
-                ->to('contact@camerontrenddesign.co.uk')
-                ->from($formData['email'])
-                ->subject($formData['subject']);
-        });
+        Mail::to('contact@camerontrenddesign.co.uk')->send(new EnquiryMail(
+            $formData['email'],
+            $formData['subject'],
+            $formData['body'],
+            ''
+        ));
 
         return Redirect::route('contact');
     }
