@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Page;
+use App\Models\Project;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
@@ -12,38 +14,26 @@ class PageController extends Controller
      */
     public function index(Request $request): View
     {
-        return view('index');
+        return view('index', [
+            'projects' => Project::all()
+        ]);
     }
 
     /**
-     * Show the about page.
+     * Show the page.
      */
-    public function about(Request $request): View
+    public function show(Request $request, Page $page): View
     {
-        return view('about');
+        return view(strtolower($page->title), [
+            'page' => $page
+        ]);
     }
-
-    /**
-     * Show the services page.
-     */
-    public function services(Request $request): View
-    {
-        return view('services');
-    }
-
-    /**
-     * Show the instagram posts page.
-     */
-    public function instagram(Request $request): View
-    {
-        //
-    }
-
-    /**
-     * Show the contact page.
-     */
-    public function contact(Request $request): View
-    {
-        return view('contact');
-    }
+//
+//    /**
+//     * Show the instagram posts page.
+//     */
+//    public function instagram(Request $request): View
+//    {
+//        //
+//    }
 }

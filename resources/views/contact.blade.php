@@ -1,58 +1,47 @@
 <x-layout>
-    <div class="main">
-        <div class="headingfull">
-            <h1>Contact</h1>
+    <x-hero :page="$page" />
+    <section>
+        <div class="ct-text">
+            <p>Feel free to reach out to Cameron by phone, email, social media or the contact form below.</p>
         </div>
-        <div class="consplit">
-            <div class="consplitl">
-                <img src="{{ asset('media/cameron_headshot_2.jpg') }}" alt="">
-            </div>
-            <div class="consplitr">
-                <div id="greeting">
-                    <p>Feel free to reach out to Cameron by phone, email or the contact form below.</p>
-                </div>
-                <div id="phone">
-                    <p>Phone:</p>
-                    <h2>07581 647855</h2>
-                </div>
-                <div id="mail">
-                    <p>Email:</p>
-                    <h2>cameron.trend@gmail.com</h2>
-                </div>
-            </div>
-        </div>
-        <div class="confull">
-            <div class="formcontainer">
-                <form method="post" action="{{ route('send-contact-form') }}" autocomplete="off">
-                    @csrf
-                    <label for="email">Email</label>
-                    <input type="text" id="email" name="email" placeholder="example@domain.com" required>
-                    <label for="subject">Subject</label>
+    </section>
+    <section class="ct-contact">
+        <article>
+            <p><a href="mailto:contact@camerontrenddesign.co.uk"><i class="fa-solid fa-envelope"></i> contact@camerontrenddesign.co.uk</a></p>
+            <p><a href="tel:07581647855"><i class="fa-solid fa-phone"></i> 07581 647855</a></p>
+            <p class="contact-info">
+                <a href="https://www.facebook.com/camerontrendgardendesign" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.pinterest.co.uk/camerontrend/" target="_blank"><i class="fa-brands fa-pinterest"></i></a>
+                <a href="https://www.instagram.com/camerontrenddesign/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            </p>
+        </article>
+        <article>
+            <form class="ct-form" method="post" action="{{ route('send-contact-form') }}" autocomplete="off">
+                @csrf
+                <label for="email">
+                    <input type="text" id="email" name="email" required placeholder=" ">
+                    <span>Email</span>
+                </label>
+                <div class="ct-select">
                     <select name="subject" id="subject" required>
-                        <option value="">Please select</option>
+                        <option value="" disabled selected>Subject...</option>
                         <option value="Design Consultation">Design Consultation</option>
                         <option value="Garden Design">Garden Design</option>
                         <option value="Planting Plan">Planting Plan</option>
                         <option value="General Enquiry">General Enquiry</option>
                     </select>
-                    <label for="message">Message</label>
-                    <textarea id="body" name="body" placeholder="" style="height:200px" required></textarea>
-
-                    <label for="subject">How did you find this website?</label>
-                    <select name="" id="">
-                        <option value="">Please select</option>
-                        <option value="Fiend/Family">Friend/Family</option>
-                        <option value="Instagram">Instagram</option>
-                        <option value="Facebook">Facebook</option>
-                        <option value="Google">Google</option>
-                        <option value="Other">Other</option>
-                    </select>
-                    <input type="submit" name="submit" value="Send">
-                </form>
-            </div>
-        </div>
-        <div class="full" style="display: flex;">
-            <a href="https://www.inchbald.co.uk" target="_blank"><img src="{{ asset('media/inchbald.jpg') }}" alt="" id="inchbald"></a>
-        </div>
-    </div>
+                </div>
+                <label for="body">
+                    <textarea id="body" name="body" placeholder=" " required></textarea>
+                    <span>Message</span>
+                </label>
+                <button class="ct-btn" type="submit" name="submit">
+                    Send
+                </button>
+            </form>
+        </article>
+    </section>
+    <section class="section-bottom">
+        <a href="https://www.inchbald.co.uk" target="_blank"><img src="{{ asset('media/inchbald.jpg') }}" alt="Inchbald School of Design Logo"></a>
+    </section>
 </x-layout>

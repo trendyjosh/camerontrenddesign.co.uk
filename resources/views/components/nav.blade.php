@@ -1,33 +1,49 @@
-<header class="header">
-    <div @class(["topnav", "topnav-down" => !$index]) id="topNav">
-        @isset($index)
-            <a href="{{ route('landing') }}" style="float:left"><img id="logo-white" class="logo logo-white" src="{{ asset('media/white-logo.png') }}" alt="CamLogo"><img id="logo-black" class="logo-black logo" src="{{ asset('media/New-Logo-Branding2.svg') }}" alt="CamLogo"></a>
-            <a class="logo-black" href="{{ route('landing') }}" style="float:left" id="cameron"><img src="{{ asset('media/New-Logo-Branding1.svg') }}" alt="CamTitle" class="title"></a>
-            <a class="logo-white" href="{{ route('landing') }}" style="float:left" id="cameron2"><img src="{{ asset('media/white-text.png') }}" alt="CamTitle" class="title"></a>
-        @else
-            <a href="{{ route('landing') }}" style="float:left"><img src="{{ asset('media/New-Logo-Branding2.svg') }}" alt="CamLogo" class="logo"></a>
-            <a href="{{ route('landing') }}" style="float:left" id="cameron"><img src="{{ asset('media/New-Logo-Branding1.svg') }}" alt="CamTitle" class="title"></a>
-        @endisset
-        <a href="{{ route('contact') }}" class="menu" id="contactlink">Contact</a>
-        <!-- <a href="instagram.php" class="menu">Instagram</a> -->
-        <a href="{{ route('services') }}" class="menu">Services</a>
-        <a href="{{ route('landing') }}#projects" class="menu">Portfolio</a>
-        <a href="{{ route('about') }}" class="menu">About</a>
-        <a href="javascript:void(0);" class="icon" onclick="dropDown()">
-            <img id="icon-black" src="{{ asset('media/bars.png') }}">
-            @isset($index)
-                <img id="icon-white" src="{{ asset('media/bars2.png') }}">
-            @endisset
-        </a>
-    </div>
+<header class="ct-header scrolled-up">
+    <input type="checkbox" name="burger" id="burger" class="ct-burger__input">
+    <nav class="ct-nav">
+        <div class="ct-nav__logo">
+            <a href="{{ route('landing') }}">
+                <img class="ct-nav__logo-large logo-white" src="{{ asset('media/white-logo.png') }}" alt="Cameron Trend Design Logo">
+                <img class="ct-nav__logo-large logo-black" src="{{ asset('media/New-Logo-Branding2.svg') }}" alt="Cameron Trend Design Logo">
+            </a>
+            <a href="{{ route('landing') }}">
+                <img class="ct-nav__logo-small logo-white" src="{{ asset('media/white-text.png') }}" alt="Cameron Trend Design Title">
+                <img class="ct-nav__logo-small logo-black" src="{{ asset('media/New-Logo-Branding1.svg') }}" alt="Cameron Trend Design Title">
+            </a>
+        </div>
+        <label for="burger" class="ct-burger__container">
+            <div class="ct-burger">
+                <span class="ct-burger__bar"></span>
+                <span class="ct-burger__bar"></span>
+                <span class="ct-burger__bar"></span>
+                <span class="ct-burger__bar"></span>
+            </div>
+        </label>
+        <ul class="ct-nav__list">
+            <li class="ct-nav__list-item">
+                <a href="{{ route('page', 'about') }}" class="menu menu-top">About</a>
+            </li>
+            <li class="ct-nav__list-item">
+                <a href="{{ route('landing') }}#projects" class="menu menu-top">Portfolio</a>
+            </li>
+            <li class="ct-nav__list-item">
+                <a href="{{ route('page', 'services') }}" class="menu menu-top">Services</a>
+            </li>
+            {{-- <li class="ct-nav__list-item">
+                <a href="{{ route('instagram') }}" class="menu menu-top">Instagram</a>
+            </li> --}}
+            <li class="ct-nav__list-item">
+                <a href="{{ route('page', 'contact') }}" class="menu menu-top">Contact</a>
+            </li>
+        </ul>
+    </nav>
 </header>
 <script type="text/javascript">
-    function dropDown() {
-        var navstate = document.getElementById("topNav");
-        if (navstate.classList.contains("responsive")) {
-            navstate.classList.remove("responsive");
+    window.onscroll = () => {
+        if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80){
+            document.getElementsByClassName("ct-header")[0].classList.remove("scrolled-up");
         } else {
-            navstate.classList.add("responsive");
+            document.getElementsByClassName("ct-header")[0].classList.add("scrolled-up");
         }
     }
 </script>

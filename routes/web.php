@@ -19,12 +19,8 @@ use Illuminate\Support\Facades\Route;
 Route::controller(PageController::class)->group(function () {
     // Landing page
     Route::get('/', 'index')->name('landing');
-    // about page
-    Route::get('/about', 'about')->name('about');
-    // Services page
-    Route::get('/services', 'services')->name('services');
-    // Contact page
-    Route::get('/contact', 'contact')->name('contact');
+    // Show page
+    Route::get('/{page}', 'show')->name('page');
 });
 
 Route::controller(EmailController::class)->group(function () {
@@ -33,14 +29,6 @@ Route::controller(EmailController::class)->group(function () {
 });
 
 Route::controller(ProjectController::class)->group(function () {
-    // Wildlife garden project
-    Route::get('wildlife-garden', 'wildlifeGarden')->name('wildlife-garden');
-    // Barn garden project
-    Route::get('barn-conversion', 'barnConversion')->name('barn-conversion');
-    // Large garden project
-    Route::get('large-garden', 'largeGarden')->name('large-garden');
-    // Small garden project
-    Route::get('small-garden', 'smallGarden')->name('small-garden');
-    // Town garden project
-    Route::get('town-garden', 'townGarden')->name('town-garden');
+    // Show a project
+    Route::get('/projects/{project}', 'show')->name('projects.show');
 });

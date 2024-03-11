@@ -2,43 +2,21 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Project;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
 class ProjectController extends Controller
 {
     /**
-     * Show the Wildlife garden project
+     * Show the project.
      */
-    public function wildlifeGarden(): View {
-        return view('projects/wildlife-garden');
-    }
+    public function show(Project $project): View {
+        // Eager load project content
+        $project->load('content');
 
-    /**
-     * Show the Barn conversion project
-     */
-    public function barnConversion(): View {
-        return view('projects/barn-conversion');
-    }
-
-    /**
-     * Show the Large garden project
-     */
-    public function largeGarden(): View {
-        return view('projects/large-garden');
-    }
-
-    /**
-     * Show the Small garden project
-     */
-    public function smallGarden(): View {
-        return view('projects/small-garden');
-    }
-
-    /**
-     * Show the Town garden project
-     */
-    public function townGarden(): View {
-        return view('projects/town-garden');
+        return view('project', [
+            'project' => $project
+        ]);
     }
 }
