@@ -32,7 +32,7 @@
                     </select>
                 </div>
                 <label for="body">
-                    <textarea id="body" name="body" placeholder="" required></textarea>
+                    <textarea id="body" name="body" placeholder=" " required></textarea>
                     <span>Message</span>
                 </label>
                 <button class="ct-btn" type="submit" name="submit">
