@@ -39,7 +39,7 @@ class EnquiryMail extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'mail.enquiry',
+            view: 'emails.enquiry',
         );
     }
 }
