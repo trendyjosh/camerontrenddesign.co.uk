@@ -5,15 +5,20 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StorePageRequest;
 use App\Http\Requests\UpdatePageRequest;
 use App\Models\Page;
+use Inertia\Inertia;
+use Inertia\Response;
 
 class AdminPageController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(): Response
     {
-        //
+        $pages = Page::all();
+        return Inertia::render('Page/Index', [
+            'pages' => $pages
+        ]);
     }
 
     /**
