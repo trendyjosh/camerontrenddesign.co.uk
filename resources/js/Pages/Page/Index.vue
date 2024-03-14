@@ -1,6 +1,6 @@
 <script setup>
 import AppLayout from "@/Layouts/AppLayout.vue";
-import Table from "@/Components/Table.vue";
+import PagesTable from "@/Pages/Page/Partials/PagesTable.vue";
 
 const props = defineProps({
     pages: Array,
@@ -18,7 +18,7 @@ const props = defineProps({
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                    <Table :pages />
+                    <PagesTable :pages />
                 </div>
             </div>
         </div>
