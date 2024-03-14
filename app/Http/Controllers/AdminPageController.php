@@ -23,9 +23,11 @@ class AdminPageController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Page $page)
+    public function show(Page $page): Response
     {
-        //
+        return Inertia::render('Page/Show', [
+            'page' => $page
+        ]);
     }
 
     /**

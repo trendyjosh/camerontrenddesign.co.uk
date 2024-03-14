@@ -23,7 +23,7 @@ const props = defineProps({
                     <PrimaryButtonLink
                         :href="
                             route('pages.show', {
-                                page: page.id,
+                                page: page.slug,
                             })
                         "
                         >View</PrimaryButtonLink
