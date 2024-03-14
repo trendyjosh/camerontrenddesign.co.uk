@@ -34,6 +34,8 @@ Route::prefix('admin')->group(function () {
         })->name('dashboard');
         // Site page management
         Route::resource('pages', AdminPageController::class)->except([
+            'create',
+            'store',
             'destroy'
         ]);
         // Site project management
