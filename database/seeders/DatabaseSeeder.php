@@ -14,14 +14,15 @@ class DatabaseSeeder extends Seeder
     {
         //Create customisable site pages
         $standardPages = [
-            'About',
-            'Services',
-            'Contact',
+            'About' => null,
+            'Services' => 'The creative endeavour to implement visual ideas into gardens',
+            'Contact' => null,
         ];
 
-        foreach ($standardPages as $standardPage) {
+        foreach ($standardPages as $title => $subTitle) {
             Page::create([
-                'title' => $standardPage,
+                'title' => $title,
+                'sub_title' => $subTitle,
                 'hero' => 'media/garden_care.jpg'
             ]);
         }
