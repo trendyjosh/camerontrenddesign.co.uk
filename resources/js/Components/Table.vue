@@ -1,5 +1,5 @@
 <script setup>
-import PrimaryButton from "@/Components/PrimaryButton.vue";
+import PrimaryButtonLink from "@/Components/PrimaryButtonLink.vue";
 
 const props = defineProps({
     pages: Array,
@@ -24,7 +24,14 @@ const props = defineProps({
                 <td class="p-4 pt-2 pb-2">{{ page.sub_title }}</td>
                 <td class="p-4 pt-2 pb-2">{{ page.hero }}</td>
                 <td class="p-4 pt-2 pb-2">
-                    <PrimaryButton>Edit</PrimaryButton>
+                    <PrimaryButtonLink
+                        :href="
+                            route('pages.show', {
+                                page: page.id,
+                            })
+                        "
+                        >Edit</PrimaryButtonLink
+                    >
                 </td>
             </tr>
         </tbody>
