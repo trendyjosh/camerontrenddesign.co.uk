@@ -1,16 +1,26 @@
 <script setup>
 import AppLayout from "@/Layouts/AppLayout.vue";
+import Breadcrumbs from "@/Components/Breadcrumbs.vue";
 import PrimaryButtonLink from "@/Components/PrimaryButtonLink.vue";
 import UpdatePageForm from "@/Pages/Page/Partials/UpdatePageForm.vue";
 
 const props = defineProps({
     page: Object,
 });
+
+const links = [
+    { title: "Pages", url: route("pages.index") },
+    {
+        title: props.page.title,
+        url: route("pages.show", { page: props.page.slug }),
+    },
+];
 </script>
 
 <template>
     <AppLayout title="Page">
         <template #header>
+            <Breadcrumbs :links />
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                 {{ page.title }} Page
             </h2>

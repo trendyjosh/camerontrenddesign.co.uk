@@ -1,15 +1,19 @@
 <script setup>
 import AppLayout from "@/Layouts/AppLayout.vue";
+import Breadcrumbs from "@/Components/Breadcrumbs.vue";
 import PagesTable from "@/Pages/Page/Partials/PagesTable.vue";
 
 const props = defineProps({
     pages: Array,
 });
+
+const links = [{ title: "Pages", url: route("pages.index") }];
 </script>
 
 <template>
     <AppLayout title="Pages">
         <template #header>
+            <Breadcrumbs :links />
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                 Pages
             </h2>
