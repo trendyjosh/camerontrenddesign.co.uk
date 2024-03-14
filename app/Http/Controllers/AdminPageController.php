@@ -33,9 +33,11 @@ class AdminPageController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Page $page)
+    public function edit(Page $page): Response
     {
-        //
+        return Inertia::render('Page/Edit', [
+            'page' => $page
+        ]);
     }
 
     /**
@@ -43,6 +45,21 @@ class AdminPageController extends Controller
      */
     public function update(UpdatePageRequest $request, Page $page)
     {
-        //
+        // Validate input
+        $formFields = $request->validated();
+
+        // Allow empty subtitle
+        if (!isset($formFields['sub_title'])) {
+            $formFields['sub_title'] = null;
+        }
+
+        // Get upload file path
+        if (isset($formFields['hero'])) {
+            $formFields['hero'] = $request->file('hero')->store('hero', 'public');
+        }
+
+        $page->update($formFields);
+
+        return redirect()->route('pages.show', ['page' => $page->slug])->with('message', 'Page updated!');
     }
 }

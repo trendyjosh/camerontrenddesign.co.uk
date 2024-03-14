@@ -3,17 +3,10 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rules\File;
 
 class UpdatePageRequest extends FormRequest
 {
-    /**
-     * Determine if the user is authorized to make this request.
-     */
-    public function authorize(): bool
-    {
-        return false;
-    }
-
     /**
      * Get the validation rules that apply to the request.
      *
@@ -22,7 +15,8 @@ class UpdatePageRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'hero' => ['nullable', 'image'],
+            'sub_title' => ['nullable', 'string']
         ];
     }
 }
