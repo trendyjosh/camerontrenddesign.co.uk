@@ -5,15 +5,20 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
 use App\Models\Project;
+use Inertia\Inertia;
+use Inertia\Response;
 
 class AdminProjectController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(): Response
     {
-        //
+        $projects = Project::all();
+        return Inertia::render('Project/Index', [
+            'project' => $projects
+        ]);
     }
 
     /**
