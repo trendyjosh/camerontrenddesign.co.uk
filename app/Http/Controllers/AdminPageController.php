@@ -60,6 +60,6 @@ class AdminPageController extends Controller
 
         $page->update($formFields);
 
-        return redirect()->route('pages.show', ['page' => $page->slug])->with('message', 'Page updated!');
+        return redirect()->route('admin.pages.show', ['page' => $page->slug])->with('message', 'Page updated!');
     }
 }

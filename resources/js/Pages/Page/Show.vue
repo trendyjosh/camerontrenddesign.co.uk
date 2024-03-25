@@ -2,17 +2,16 @@
 import AppLayout from "@/Layouts/AppLayout.vue";
 import Breadcrumbs from "@/Components/Breadcrumbs.vue";
 import PrimaryButtonLink from "@/Components/PrimaryButtonLink.vue";
-import UpdatePageForm from "@/Pages/Page/Partials/UpdatePageForm.vue";
 
 const props = defineProps({
     page: Object,
 });
 
 const links = [
-    { title: "Pages", url: route("pages.index") },
+    { title: "Pages", url: route("admin.pages.index") },
     {
         title: props.page.title,
-        url: route("pages.show", { page: props.page.slug }),
+        url: route("admin.pages.show", { page: props.page.slug }),
     },
 ];
 </script>
@@ -66,7 +65,7 @@ const links = [
                     >
                         <PrimaryButtonLink
                             :href="
-                                route('pages.edit', {
+                                route('admin.pages.edit', {
                                     page: page.slug,
                                 })
                             "

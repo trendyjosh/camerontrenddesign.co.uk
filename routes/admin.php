@@ -12,7 +12,11 @@ use Inertia\Inertia;
 |--------------------------------------------------------------------------
 */
 
-Route::prefix('admin')->group(function () {
+$resourceRouteOptions = [
+    'as' => 'admin'
+];
+
+Route::prefix('admin')->group(function () use ($resourceRouteOptions) {
     Route::get('/', function () {
         return Inertia::render('Welcome', [
             'canLogin' => Route::has('login'),
@@ -27,18 +31,18 @@ Route::prefix('admin')->group(function () {
         'auth:sanctum',
         config('jetstream.auth_session'),
         'verified',
-    ])->group(function () {
+    ])->group(function () use ($resourceRouteOptions) {
         // Dashboard
         Route::get('/dashboard', function () {
             return Inertia::render('Dashboard');
         })->name('dashboard');
         // Site page management
-        Route::resource('pages', AdminPageController::class)->except([
+        Route::resource('pages', AdminPageController::class, $resourceRouteOptions)->except([
             'create',
             'store',
             'destroy'
         ]);
         // Site project management
-        Route::resource('projects', AdminProjectController::class);
+        Route::resource('projects', AdminProjectController::class, $resourceRouteOptions);
     });
 });

@@ -7,7 +7,7 @@ const props = defineProps({
     pages: Array,
 });
 
-const links = [{ title: "Pages", url: route("pages.index") }];
+const links = [{ title: "Pages", url: route("admin.pages.index") }];
 </script>
 
 <template>
