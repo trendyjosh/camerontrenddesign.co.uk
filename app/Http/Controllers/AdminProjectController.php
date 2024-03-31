@@ -17,7 +17,7 @@ class AdminProjectController extends Controller
     {
         $projects = Project::all();
         return Inertia::render('Project/Index', [
-            'project' => $projects
+            'projects' => $projects
         ]);
     }
 
