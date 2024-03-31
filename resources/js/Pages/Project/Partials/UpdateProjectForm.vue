@@ -6,8 +6,8 @@ import FormSection from "@/Components/FormSection.vue";
 import InputError from "@/Components/InputError.vue";
 import InputLabel from "@/Components/InputLabel.vue";
 import PrimaryButton from "@/Components/PrimaryButton.vue";
-import SecondaryButton from "@/Components/SecondaryButton.vue";
 import TextInput from "@/Components/TextInput.vue";
+import ImageInput from "@/Components/ImageInput.vue";
 
 const props = defineProps({
     project: Object,
@@ -19,7 +19,6 @@ const form = useForm({
     hero: null,
 });
 
-const heroPreview = ref(null);
 const heroInput = ref(null);
 
 const updateProject = () => {
@@ -30,29 +29,11 @@ const updateProject = () => {
     form.post(route("admin.projects.update", { project: props.project.slug }), {
         errorBag: "updateProject",
         preserveScroll: true,
-        onSuccess: () => clearHeroFileInput(),
+        onSuccess: () => clearFileInput(),
     });
 };
 
-const selectNewHero = () => {
-    heroInput.value.click();
-};
-
-const updateHeroPreview = () => {
-    const hero = heroInput.value.files[0];
-
-    if (!hero) return;
-
-    const reader = new FileReader();
-
-    reader.onload = (e) => {
-        heroPreview.value = e.target.result;
-    };
-
-    reader.readAsDataURL(hero);
-};
-
-const clearHeroFileInput = () => {
+const clearFileInput = () => {
     if (heroInput.value?.value) {
         heroInput.value.value = null;
     }
@@ -70,43 +51,12 @@ const clearHeroFileInput = () => {
         <template #form>
             <!-- Project Hero -->
             <div class="col-span-6 sm:col-span-4">
-                <!-- Project Hero File Input -->
-                <input
-                    id="hero"
-                    ref="heroInput"
-                    type="file"
-                    class="hidden"
-                    @change="updateHeroPreview"
+                <ImageInput
+                    v-model="heroInput"
+                    name="Hero"
+                    :src="project.hero"
+                    class="aspect-hero"
                 />
-
-                <InputLabel for="hero" value="Hero" />
-
-                <!-- Current Project Hero -->
-                <div v-show="!heroPreview" class="mt-2 aspect-hero">
-                    <img
-                        :src="'/storage/' + project.hero"
-                        :alt="project.title"
-                        class="w-full h-full object-cover"
-                    />
-                </div>
-
-                <!-- New Project Hero Preview -->
-                <div v-show="heroPreview" class="mt-2 aspect-hero">
-                    <span
-                        class="block w-full h-full bg-cover bg-no-repeat bg-center"
-                        :style="
-                            'background-image: url(\'' + heroPreview + '\');'
-                        "
-                    />
-                </div>
-
-                <SecondaryButton
-                    class="mt-2 me-2"
-                    type="button"
-                    @click.prevent="selectNewHero"
-                >
-                    Select A New Hero
-                </SecondaryButton>
 
                 <InputError :message="form.errors.hero" class="mt-2" />
             </div>
