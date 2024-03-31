@@ -17,13 +17,18 @@ const form = useForm({
     title: "",
     hero: null,
     sub_title: "",
+    thumb: null,
 });
 
 const heroInput = ref(null);
+const thumbInput = ref(null);
 
 const createProject = () => {
     if (heroInput.value) {
         form.hero = heroInput.value.files[0];
+    }
+    if (thumbInput.value) {
+        form.thumb = thumbInput.value.files[0];
     }
 
     form.post(route("admin.projects.store"), {
@@ -36,6 +41,9 @@ const createProject = () => {
 const clearFileInput = () => {
     if (heroInput.value?.value) {
         heroInput.value.value = null;
+    }
+    if (thumbInput.value?.value) {
+        thumbInput.value.value = null;
     }
 };
 </script>
@@ -84,6 +92,17 @@ const clearFileInput = () => {
                     autocomplete="sub_title"
                 />
                 <InputError :message="form.errors.sub_title" class="mt-2" />
+            </div>
+
+            <!-- Project Thumbnail -->
+            <div class="col-span-6 sm:col-span-4">
+                <ImageInput
+                    v-model="thumbInput"
+                    name="Thumbnail"
+                    class="aspect-thumb"
+                />
+
+                <InputError :message="form.errors.hero" class="mt-2" />
             </div>
         </template>
 
