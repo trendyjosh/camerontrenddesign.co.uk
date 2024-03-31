@@ -59,6 +59,23 @@ const links = [
                         <p class="text-lg font-medium text-gray-900">
                             {{ project.sub_title }}
                         </p>
+
+                        <h2
+                            v-if="project.thumb"
+                            class="mt-6 text-xl font-semibold text-gray-900"
+                        >
+                            Thumbnail
+                        </h2>
+                        <div
+                            v-if="project.thumb"
+                            class="mt-2 aspect-thumb w-80"
+                        >
+                            <img
+                                :src="'/storage/' + project.thumb"
+                                :alt="project.title + ' thumbnail'"
+                                class="w-full h-full object-cover"
+                            />
+                        </div>
                     </div>
                     <div
                         class="flex items-center justify-end px-4 py-3 bg-gray-50 text-end sm:px-6 shadow sm:rounded-bl-md sm:rounded-br-md"
