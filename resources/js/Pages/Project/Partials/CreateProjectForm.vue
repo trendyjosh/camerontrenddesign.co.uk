@@ -14,7 +14,6 @@ const props = defineProps({
 });
 
 const form = useForm({
-    _method: "POST",
     title: "",
     hero: null,
     sub_title: "",
