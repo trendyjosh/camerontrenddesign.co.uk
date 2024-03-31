@@ -28,7 +28,6 @@ class AdminProjectController extends Controller
      */
     public function create(): Response
     {
-        $projects = Project::all();
         return Inertia::render('Project/Create');
     }
 
