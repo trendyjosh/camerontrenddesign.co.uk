@@ -7,7 +7,7 @@ defineProps({
 </script>
 
 <template>
-    <div class="flex items-center pb-4 overflow-x-auto">
+    <div class="flex items-center pt-4 overflow-x-auto">
         <template v-for="(link, index) in links">
             <span v-if="index > 0" class="mx-3 text-gray-400"> / </span>
 

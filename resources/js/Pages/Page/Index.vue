@@ -6,14 +6,11 @@ import PagesTable from "@/Pages/Page/Partials/PagesTable.vue";
 const props = defineProps({
     pages: Array,
 });
-
-const links = [{ title: "Pages", url: route("admin.pages.index") }];
 </script>
 
 <template>
     <AppLayout title="Pages">
         <template #header>
-            <Breadcrumbs :links />
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                 Pages
             </h2>

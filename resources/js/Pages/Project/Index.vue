@@ -7,14 +7,11 @@ import ProjectsTable from "@/Pages/Project/Partials/ProjectsTable.vue";
 const props = defineProps({
     projects: Array,
 });
-
-const links = [{ title: "Projects", url: route("admin.projects.index") }];
 </script>
 
 <template>
     <AppLayout title="Projects">
         <template #header>
-            <Breadcrumbs :links />
             <div class="flex">
                 <h2
                     class="font-semibold text-xl text-gray-800 leading-tight grow"

@@ -19,10 +19,10 @@ const links = [
 <template>
     <AppLayout title="Project">
         <template #header>
-            <Breadcrumbs :links />
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                 {{ project.title }} Project
             </h2>
+            <Breadcrumbs :links />
         </template>
 
         <div class="py-12">
