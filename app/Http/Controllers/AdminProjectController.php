@@ -6,6 +6,7 @@ use App\Http\Requests\StoreProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
 use App\Models\Project;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\Storage;
 use Inertia\Inertia;
 use Inertia\Response;
 
@@ -96,7 +97,11 @@ class AdminProjectController extends Controller
      */
     public function destroy(Project $project): RedirectResponse
     {
+        // Delete any project images
+        Storage::disk('public')->delete($project->hero);
+        // Delete the project
         $project->delete();
+
         return redirect()->route('admin.projects.index')->with('message', 'Project deleted.');
     }
 }
