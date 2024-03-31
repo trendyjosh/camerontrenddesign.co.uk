@@ -37,6 +37,12 @@ class AdminProjectController extends Controller
     public function store(StoreProjectRequest $request): RedirectResponse
     {
         $formFields = $request->validated();
+
+        // Get upload file path
+        if (isset($formFields['hero'])) {
+            $formFields['hero'] = $request->file('hero')->store('hero', 'public');
+        }
+
         Project::create($formFields);
         return redirect()->route('admin.projects.index')->with('message', 'Project created successfully.');
     }
