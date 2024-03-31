@@ -7,10 +7,6 @@ const props = defineProps({
     project: Object,
 });
 
-console.log(props);
-
-console.log(props.project);
-
 const links = [
     { title: "Projects", url: route("admin.projects.index") },
     {
