@@ -60,17 +60,35 @@ class AdminProjectController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Project $project)
+    public function edit(Project $project): Response
     {
-        //
+        return Inertia::render('Project/Edit', [
+            'project' => $project
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateProjectRequest $request, Project $project)
+    public function update(UpdateProjectRequest $request, Project $project): RedirectResponse
     {
-        //
+        $formFields = $request->validated();
+
+        // Allow empty subtitle
+        if (!isset($formFields['sub_title'])) {
+            $formFields['sub_title'] = null;
+        }
+
+        // Get upload file path
+        if (isset($formFields['hero'])) {
+            $formFields['hero'] = $request->file('hero')->store('hero', 'public');
+        }
+
+        $project->update($formFields);
+
+        return redirect()->route('admin.projects.show', [
+            'project' => $project->slug
+        ])->with('message', 'Project updated successfully.');
     }
 
     /**
