@@ -1,6 +1,7 @@
 <script setup>
 import AppLayout from "@/Layouts/AppLayout.vue";
 import Breadcrumbs from "@/Components/Breadcrumbs.vue";
+import PrimaryButtonLink from "@/Components/PrimaryButtonLink.vue";
 import ProjectsTable from "@/Pages/Project/Partials/ProjectsTable.vue";
 
 const props = defineProps({
@@ -14,9 +15,16 @@ const links = [{ title: "Projects", url: route("admin.projects.index") }];
     <AppLayout title="Projects">
         <template #header>
             <Breadcrumbs :links />
-            <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                Projects
-            </h2>
+            <div class="flex">
+                <h2
+                    class="font-semibold text-xl text-gray-800 leading-tight grow"
+                >
+                    Projects
+                </h2>
+                <PrimaryButtonLink :href="route('admin.projects.create')">
+                    Create
+                </PrimaryButtonLink>
+            </div>
         </template>
 
         <div class="py-12">
