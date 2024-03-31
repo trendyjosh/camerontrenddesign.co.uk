@@ -27,7 +27,7 @@ const updatePage = () => {
         form.hero = heroInput.value.files[0];
     }
 
-    form.post(route("pages.update", { page: props.page.slug }), {
+    form.post(route("admin.pages.update", { page: props.page.slug }), {
         errorBag: "updatePage",
         preserveScroll: true,
         onSuccess: () => clearHeroFileInput(),

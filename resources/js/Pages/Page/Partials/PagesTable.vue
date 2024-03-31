@@ -22,7 +22,7 @@ const props = defineProps({
                 <td class="p-4 pt-2 pb-2">
                     <PrimaryButtonLink
                         :href="
-                            route('pages.show', {
+                            route('admin.pages.show', {
                                 page: page.slug,
                             })
                         "
