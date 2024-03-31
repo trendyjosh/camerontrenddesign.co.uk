@@ -18,7 +18,8 @@ export default {
                 sans: ["Figtree", ...defaultTheme.fontFamily.sans],
             },
             aspectRatio: {
-                hero: "20 / 4",
+                hero: "5 / 1",
+                thumb: "1 / 1",
             },
         },
     },
