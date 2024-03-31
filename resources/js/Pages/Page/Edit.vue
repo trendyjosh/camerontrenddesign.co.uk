@@ -1,10 +1,22 @@
 <script setup>
 import AppLayout from "@/Layouts/AppLayout.vue";
+import Breadcrumbs from "@/Components/Breadcrumbs.vue";
 import UpdatePageForm from "@/Pages/Page/Partials/UpdatePageForm.vue";
 
 const props = defineProps({
     page: Object,
 });
+const links = [
+    { title: "Pages", url: route("admin.pages.index") },
+    {
+        title: props.page.title,
+        url: route("admin.pages.show", { page: props.page.slug }),
+    },
+    {
+        title: "Edit",
+        url: route("admin.pages.edit", { page: props.page.slug }),
+    },
+];
 </script>
 
 <template>
@@ -13,6 +25,7 @@ const props = defineProps({
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                 {{ page.title }} Page
             </h2>
+            <Breadcrumbs :links />
         </template>
 
         <div>
