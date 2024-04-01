@@ -14,12 +14,12 @@ return new class extends Migration
     {
         Schema::create('project_contents', function (Blueprint $table) {
             $table->id();
-            $table->boolean('full');
-            $table->string('style');
-            $table->string('content');
-            $table->string('source');
-            $table->string('caption');
-            $table->integer('position');
+            $table->boolean('full')->default(0);
+            $table->string('style')->nullable();
+            $table->string('content')->nullable();
+            $table->string('source')->nullable();
+            $table->string('caption')->nullable();
+            $table->integer('position')->default(0);
             $table->foreignIdFor(Project::class);
             $table->timestamps();
         });
