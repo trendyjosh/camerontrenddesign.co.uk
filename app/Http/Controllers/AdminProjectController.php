@@ -64,6 +64,7 @@ class AdminProjectController extends Controller
      */
     public function edit(Project $project): Response
     {
+        $project->load('content');
         return Inertia::render('Project/Edit', [
             'project' => $project
         ]);
