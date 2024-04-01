@@ -82,9 +82,13 @@ class AdminProjectController extends Controller
             $formFields['sub_title'] = null;
         }
 
-        // Get upload file path
-        if (isset($formFields['hero'])) {
-            $formFields['hero'] = $request->file('hero')->store('hero', 'public');
+        // Get image upload file paths
+        foreach (['hero', 'thumb'] as $projectImage) {
+            if (isset($formFields[$projectImage])) {
+                $formFields[$projectImage] = $request->file($projectImage)->store($projectImage, 'public');
+            } else {
+                $formFields[$projectImage] = $project->$projectImage;
+            }
         }
 
         $project->update($formFields);
