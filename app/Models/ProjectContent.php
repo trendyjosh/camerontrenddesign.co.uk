@@ -11,7 +11,7 @@ class ProjectContent extends Model
     use HasFactory;
 
     protected $fillable = [
-        "size",
+        "full",
         "style",
         "content",
         "source",
