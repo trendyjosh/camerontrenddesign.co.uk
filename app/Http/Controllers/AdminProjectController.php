@@ -39,11 +39,10 @@ class AdminProjectController extends Controller
         $formFields = $request->validated();
 
         // Get image upload file paths
-        if (isset($formFields['hero'])) {
-            $formFields['hero'] = $request->file('hero')->store('hero', 'public');
-        }
-        if (isset($formFields['thumb'])) {
-            $formFields['thumb'] = $request->file('thumb')->store('thumb', 'public');
+        foreach (['hero', 'thumb'] as $projectImage) {
+            if (isset($formFields[$projectImage])) {
+                $formFields[$projectImage] = $request->file($projectImage)->store($projectImage, 'public');
+            }
         }
 
         Project::create($formFields);
