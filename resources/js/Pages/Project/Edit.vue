@@ -38,7 +38,7 @@ const links = [
 
                 <SectionBorder class="mb-10 sm:mb-0" />
 
-                <CreateProjectContentForm :content="project.content" />
+                <CreateProjectContentForm :project />
 
                 <SectionBorder class="mb-10 sm:mb-0" />
 

@@ -12,12 +12,11 @@ import { useForm } from "@inertiajs/vue3";
 import Skeleton from "@/Components/Skeleton.vue";
 
 const props = defineProps({
-    content: Array,
+    project: Object,
 });
 
 const form = useForm({
-    _method: "PUT",
-    content: props.content ?? [],
+    content: props.project.content ?? [],
 });
 
 console.log(props.content);
