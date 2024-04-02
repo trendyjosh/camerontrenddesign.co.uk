@@ -19,8 +19,6 @@ const selectNewImage = () => {
 const updateImagePreview = () => {
     const image = imageInput.value.files[0];
 
-    console.log(image);
-
     if (!image) return;
 
     const reader = new FileReader();
@@ -55,10 +53,15 @@ const updateImagePreview = () => {
     </div>
 
     <!-- New Image Preview -->
-    <div v-show="imagePreview" class="mt-2" :class="[props.class]">
-        <span
-            class="block w-full h-full bg-cover bg-no-repeat bg-center"
-            :style="'background-image: url(\'' + imagePreview + '\');'"
+    <div
+        v-show="imagePreview"
+        class="mt-2 flex justify-center"
+        :class="[props.class]"
+    >
+        <img
+            :src="imagePreview"
+            :alt="name + ' image'"
+            class="w-full h-full object-cover"
         />
     </div>
 
