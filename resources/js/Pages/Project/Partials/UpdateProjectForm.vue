@@ -88,7 +88,7 @@ const clearFileInput = () => {
                     v-model="thumbInput"
                     name="Thumbnail"
                     :src="project.thumb"
-                    class="aspect-thumb"
+                    class="w-36 aspect-thumb"
                 />
 
                 <InputError :message="form.errors.hero" class="mt-2" />
