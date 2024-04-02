@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminPageController;
+use App\Http\Controllers\AdminProjectContentController;
 use App\Http\Controllers\AdminProjectController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -44,5 +45,7 @@ Route::prefix('admin')->group(function () use ($resourceRouteOptions) {
         ]);
         // Site project management
         Route::resource('projects', AdminProjectController::class, $resourceRouteOptions);
+        // Site project content management
+        Route::resource('projects.contents', AdminProjectContentController::class, $resourceRouteOptions);
     });
 });
