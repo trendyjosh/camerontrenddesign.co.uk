@@ -40,7 +40,7 @@ const addContent = () => {
 };
 
 const removeContent = (index) => {
-    props.content.splice(index, 1);
+    form.content.splice(index, 1);
 };
 </script>
 
@@ -51,7 +51,7 @@ const removeContent = (index) => {
         <template #description> Add new project content. </template>
 
         <template #form>
-            <template v-for="(projectContent, index) in content">
+            <template v-for="(projectContent, index) in form.content">
                 <div
                     v-if="index > 0"
                     class="col-span-6 border-t border-gray-200"
