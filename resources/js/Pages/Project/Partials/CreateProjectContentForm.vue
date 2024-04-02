@@ -9,7 +9,8 @@ import DangerButton from "@/Components/DangerButton.vue";
 import TextArea from "@/Components/TextArea.vue";
 import ImageInput from "@/Components/ImageInput.vue";
 import { useForm } from "@inertiajs/vue3";
-import Skeleton from "@/Components/Skeleton.vue";
+import CreateProjectContentText from "@/Pages/ProjectContent/Partials/CreateProjectContentText.vue";
+import CreateProjectContentImage from "@/Pages/ProjectContent/Partials/CreateProjectContentImage.vue";
 
 const props = defineProps({
     project: Object,
@@ -19,23 +20,37 @@ const form = useForm({
     content: props.project.content ?? [],
 });
 
-console.log(props.content);
-
 const updateProject = () => {
-    // form.post(
-    //     route("admin.projects.content.create", { project: props.project.slug }),
-    //     {
-    //         errorBag: "createProjectContent",
-    //         preserveScroll: true,
-    //         onSuccess: () => clearFileInput(),
-    //     }
-    // );
+    for (let index = 0; index < form.content.length; index++) {
+        if (form.content[index].fileObj) {
+            form.content[index].file = form.content[index].fileObj.files[0];
+        } else {
+            console.log("No content");
+        }
+    }
+    form.post(
+        route("admin.projects.contents.store", { project: props.project.slug }),
+        {
+            errorBag: "createProjectContent",
+            preserveScroll: true,
+        }
+    );
 };
 
-const addContent = () => {
-    props.content.push({
+const addTextContent = () => {
+    form.content.push({
         content: "",
         full: 0,
+    });
+};
+
+const addImageContent = () => {
+    form.content.push({
+        caption: "",
+        src: "",
+        full: 0,
+        file: null,
+        fileObj: null,
     });
 };
 
@@ -56,41 +71,19 @@ const removeContent = (index) => {
                     v-if="index > 0"
                     class="col-span-6 border-t border-gray-200"
                 ></div>
+                <CreateProjectContentText
+                    v-if="projectContent.content !== undefined"
+                    v-model="form.content[index]"
+                    :index
+                />
+                <CreateProjectContentImage
+                    v-else
+                    v-model="form.content[index]"
+                    :index
+                />
                 <!-- Content -->
-                <div class="col-span-6 sm:col-span-3">
-                    <InputLabel :for="'content_' + index" value="Content" />
-                    <TextArea
-                        v-model="projectContent.content"
-                        class="mt-1 block w-full h-36"
-                    />
-                    <!-- <InputError :message="form.errors.sub_title" class="mt-2" /> -->
-                </div>
-                <div class="col-span-3 sm:col-span-2 flex flex-col">
-                    <div class="mb-5">
-                        <InputLabel :for="'full_' + index" value="Full width" />
-                        <input
-                            type="checkbox"
-                            class="rounded border-gray-300 text-indigo-600 shadow-sm focus:ring-indigo-500"
-                            v-model="projectContent.full"
-                            :true-value="1"
-                            :false-value="0"
-                            :id="'full_' + index"
-                        />
-                    </div>
-                    <div class="flex gap-4 items-center">
-                        <template v-if="projectContent.full">
-                            <Skeleton class="w-36 h-16" />
-                        </template>
-                        <template v-else>
-                            <Skeleton class="size-16" />
-                            <div class="flex flex-col gap-4">
-                                <Skeleton class="h-4 w-10" />
-                                <Skeleton class="h-4 w-16" />
-                            </div>
-                        </template>
-                    </div>
-                </div>
-                <div class="col-span-3 sm:col-span-1 flex items-center">
+                <div class="col-span-3 sm:col-span-1">
+                    <InputLabel value="Actions" />
                     <DangerButton @click="removeContent(index)">
                         Remove
                     </DangerButton>
@@ -99,8 +92,13 @@ const removeContent = (index) => {
         </template>
 
         <template #actions>
-            <SecondaryButton @click="addContent">Add content</SecondaryButton>
-            <ActionMessage :on="form.recentlySuccessful" class="me-3">
+            <SecondaryButton @click="addTextContent" class="mr-3"
+                >Add text</SecondaryButton
+            >
+            <SecondaryButton @click="addImageContent" class="mr-3"
+                >Add image</SecondaryButton
+            >
+            <ActionMessage :on="form.recentlySuccessful" class="mr-3">
                 Saved.
             </ActionMessage>
 
