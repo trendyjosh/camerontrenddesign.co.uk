@@ -18,14 +18,17 @@ class AdminProjectContentController extends Controller
     public function update(UpdateProjectContentRequest $request, Project $project): void
     {
         $formFields = $request->validated();
-        // Prepare collections
+        // Prepare variables
         $updatedContents = new Collection;
         $newContents = new Collection;
+        $position = 0;
         foreach ($formFields['content'] as $content) {
             // Upload image file
             if (isset($content['file'])) {
                 $content['source'] = $content['file']->store('content', 'public');
             }
+            // Set position
+            $content['position'] = $position;
             if (isset($content['id'])) {
                 // Update existing content
                 $existingContent = $project->content()->updateOrCreate([
@@ -37,6 +40,8 @@ class AdminProjectContentController extends Controller
                 $newProject = $project->content()->create($content);
                 $newContents->push($newProject);
             }
+            // Increment position
+            $position++;
         }
         // Get all new and removed content
         $diffContent = $project->content->diff($updatedContents);
