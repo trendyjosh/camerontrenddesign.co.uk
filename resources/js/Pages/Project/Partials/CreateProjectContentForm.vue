@@ -57,6 +57,18 @@ const addImageContent = () => {
 const removeContent = (index) => {
     form.content.splice(index, 1);
 };
+
+/**
+ * Swap array value in index position with value
+ * in newIndex position.
+ */
+const swap = (index, newIndex) => {
+    if (form.content[newIndex]) {
+        const temp = form.content[newIndex];
+        form.content[newIndex] = form.content[index];
+        form.content[index] = temp;
+    }
+};
 </script>
 
 <template>
@@ -89,9 +101,23 @@ const removeContent = (index) => {
                 <!-- Content -->
                 <div class="col-span-3 sm:col-span-1">
                     <InputLabel value="Actions" />
-                    <DangerButton @click="removeContent(index)">
-                        Remove
-                    </DangerButton>
+                    <div class="flex flex-col w-full items-center mt-2">
+                        <button
+                            @click.prevent="swap(index, index - 1)"
+                            class="triangle-up bg-gray-200 hover:bg-gray-300 w-12"
+                        ></button>
+                        <p>Move position</p>
+                        <button
+                            @click.prevent="swap(index, index + 1)"
+                            class="triangle-down bg-gray-200 hover:bg-gray-300 w-12"
+                        ></button>
+                        <DangerButton
+                            @click="removeContent(index)"
+                            class="mt-2"
+                        >
+                            Remove
+                        </DangerButton>
+                    </div>
                 </div>
             </template>
         </template>
