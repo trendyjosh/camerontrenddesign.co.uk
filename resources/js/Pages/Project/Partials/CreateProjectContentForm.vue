@@ -72,7 +72,10 @@ const removeContent = (index) => {
                     class="col-span-6 border-t border-gray-200"
                 ></div>
                 <CreateProjectContentText
-                    v-if="projectContent.content !== undefined"
+                    v-if="
+                        projectContent.content !== undefined &&
+                        projectContent.content !== null
+                    "
                     v-model="form.content[index]"
                     :index
                     :errors="form.errors"
