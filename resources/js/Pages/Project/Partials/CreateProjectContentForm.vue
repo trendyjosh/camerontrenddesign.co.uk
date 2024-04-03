@@ -44,7 +44,7 @@ const addTextContent = () => {
 const addImageContent = () => {
     form.content.push({
         caption: "",
-        src: "",
+        source: "",
         full: 0,
         file: null,
         fileObj: null,

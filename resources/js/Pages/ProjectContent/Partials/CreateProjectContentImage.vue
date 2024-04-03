@@ -19,7 +19,7 @@ const props = defineProps({
         <ImageInput
             v-model="model.fileObj"
             name="Image"
-            :src="model.src"
+            :src="model.source"
             class="w-full h-36"
         />
         <InputError
