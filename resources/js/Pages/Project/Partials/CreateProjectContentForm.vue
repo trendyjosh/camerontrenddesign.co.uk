@@ -18,12 +18,15 @@ const form = useForm({
     content: props.project.content ?? [],
 });
 
+/**
+ * Submit the project content form.
+ */
 const updateProject = () => {
     for (let index = 0; index < form.content.length; index++) {
+        // Loop through all content items
         if (form.content[index].fileObj) {
+            // Get file upload
             form.content[index].file = form.content[index].fileObj.files[0];
-        } else {
-            console.log("No content");
         }
     }
     form.post(
@@ -37,6 +40,9 @@ const updateProject = () => {
     );
 };
 
+/**
+ * Add a new text content component.
+ */
 const addTextContent = () => {
     form.content.push({
         content: "",
@@ -44,6 +50,9 @@ const addTextContent = () => {
     });
 };
 
+/**
+ * Add a new image content component.
+ */
 const addImageContent = () => {
     form.content.push({
         caption: "",
@@ -54,6 +63,9 @@ const addImageContent = () => {
     });
 };
 
+/**
+ * Remove specified project content item.
+ */
 const removeContent = (index) => {
     form.content.splice(index, 1);
 };

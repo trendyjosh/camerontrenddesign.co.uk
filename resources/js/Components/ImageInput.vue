@@ -12,10 +12,17 @@ const props = defineProps({
 
 const imagePreview = ref(null);
 
+/**
+ * Open the image upload dialogue.
+ */
 const selectNewImage = () => {
     imageInput.value.click();
 };
 
+/**
+ * Update the preview img element with the selected file
+ * converted to bae64.
+ */
 const updateImagePreview = () => {
     const image = imageInput.value.files[0];
 

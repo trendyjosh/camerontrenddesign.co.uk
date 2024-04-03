@@ -23,11 +23,16 @@ const form = useForm({
 const heroInput = ref(null);
 const thumbInput = ref(null);
 
+/**
+ * Submit the project form.
+ */
 const updateProject = () => {
     if (heroInput.value) {
+        // Get hero file
         form.hero = heroInput.value.files[0];
     }
     if (thumbInput.value) {
+        // Get thumb file
         form.thumb = thumbInput.value.files[0];
     }
 
@@ -38,6 +43,9 @@ const updateProject = () => {
     });
 };
 
+/**
+ * Clear image upload refs.
+ */
 const clearFileInput = () => {
     if (heroInput.value?.value) {
         heroInput.value.value = null;
