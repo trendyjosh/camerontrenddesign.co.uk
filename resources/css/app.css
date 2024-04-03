@@ -5,3 +5,14 @@
 [x-cloak] {
     display: none;
 }
+
+@layer components {
+    .triangle-up {
+        aspect-ratio: 2;
+        clip-path: polygon(50% 0,100% 100%,0 100%);
+    }
+    .triangle-down {
+        aspect-ratio: 2;
+        clip-path: polygon(50% 100%,100% 0,0 0);
+    }
+}
