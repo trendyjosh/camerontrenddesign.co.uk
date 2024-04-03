@@ -29,7 +29,7 @@ class Project extends Page
      */
     public function content(): HasMany
     {
-        return $this->hasMany(ProjectContent::class);
+        return $this->hasMany(ProjectContent::class)->orderBy('position', 'asc');
     }
 
     /**
