@@ -1,13 +1,10 @@
 <script setup>
 import ActionMessage from "@/Components/ActionMessage.vue";
 import FormSection from "@/Components/FormSection.vue";
-import InputError from "@/Components/InputError.vue";
 import InputLabel from "@/Components/InputLabel.vue";
 import PrimaryButton from "@/Components/PrimaryButton.vue";
 import SecondaryButton from "@/Components/SecondaryButton.vue";
 import DangerButton from "@/Components/DangerButton.vue";
-import TextArea from "@/Components/TextArea.vue";
-import ImageInput from "@/Components/ImageInput.vue";
 import { useForm } from "@inertiajs/vue3";
 import CreateProjectContentText from "@/Pages/ProjectContent/Partials/CreateProjectContentText.vue";
 import CreateProjectContentImage from "@/Pages/ProjectContent/Partials/CreateProjectContentImage.vue";
@@ -75,11 +72,13 @@ const removeContent = (index) => {
                     v-if="projectContent.content !== undefined"
                     v-model="form.content[index]"
                     :index
+                    :errors="form.errors"
                 />
                 <CreateProjectContentImage
                     v-else
                     v-model="form.content[index]"
                     :index
+                    :errors="form.errors"
                 />
                 <!-- Content -->
                 <div class="col-span-3 sm:col-span-1">

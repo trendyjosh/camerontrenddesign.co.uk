@@ -2,11 +2,13 @@
 import InputLabel from "@/Components/InputLabel.vue";
 import Skeleton from "@/Components/Skeleton.vue";
 import TextArea from "@/Components/TextArea.vue";
+import InputError from "@/Components/InputError.vue";
 
 const model = defineModel();
 
 const props = defineProps({
     index: Number,
+    errors: Object,
 });
 </script>
 
@@ -14,7 +16,10 @@ const props = defineProps({
     <div class="col-span-6 sm:col-span-3">
         <InputLabel :for="'content_' + index" value="Content" />
         <TextArea v-model="model.content" class="mt-1 block w-full h-36" />
-        <!-- <InputError :message="form.errors.sub_title" class="mt-2" /> -->
+        <InputError
+            v-if="errors[`content.${index}.content`]"
+            :message="errors[`content.${index}.content`]"
+        />
     </div>
     <div class="col-span-3 sm:col-span-2 flex flex-col">
         <div class="mb-5">
@@ -46,5 +51,9 @@ const props = defineProps({
                 </div>
             </template>
         </div>
+        <InputError
+            v-if="errors[`content.${index}.full`]"
+            :message="errors[`content.${index}.full`]"
+        />
     </div>
 </template>

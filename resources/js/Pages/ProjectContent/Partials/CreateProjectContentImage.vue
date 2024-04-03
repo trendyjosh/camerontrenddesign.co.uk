@@ -3,11 +3,13 @@ import InputLabel from "@/Components/InputLabel.vue";
 import Skeleton from "@/Components/Skeleton.vue";
 import ImageInput from "@/Components/ImageInput.vue";
 import TextInput from "@/Components/TextInput.vue";
+import InputError from "@/Components/InputError.vue";
 
 const model = defineModel();
 
 const props = defineProps({
     index: Number,
+    errors: Object,
 });
 </script>
 
@@ -20,14 +22,25 @@ const props = defineProps({
             :src="model.src"
             class="w-full h-36"
         />
-        <InputLabel :for="'caption_' + index" value="Image caption" />
+        <InputError
+            v-if="errors[`content.${index}.file`]"
+            :message="errors[`content.${index}.file`]"
+        />
+        <InputLabel
+            :for="'caption_' + index"
+            value="Image caption"
+            class="mt-2"
+        />
         <TextInput
             :id="'caption_' + index"
             v-model="model.caption"
             type="text"
             class="mt-1 block w-full"
         />
-        <!-- <InputError :message="form.errors.sub_title" class="mt-2" /> -->
+        <InputError
+            v-if="errors[`content.${index}.caption`]"
+            :message="errors[`content.${index}.caption`]"
+        />
     </div>
     <div class="col-span-3 sm:col-span-2 flex flex-col">
         <div class="mb-5">
@@ -53,5 +66,9 @@ const props = defineProps({
                 </div>
             </template>
         </div>
+        <InputError
+            v-if="errors[`content.${index}.full`]"
+            :message="errors[`content.${index}.full`]"
+        />
     </div>
 </template>
