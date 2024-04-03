@@ -4,6 +4,7 @@ body { font-family: Microsoft, sans-serif; overflow-x: hidden; }
 body, ul { margin: 0; }
 a { text-decoration: none; display: block; color: #000; }
 ul { padding: 0; list-style: none; }
+p { text-align: left; }
 section { max-width: 1250px; margin: 0 auto; padding-top: 50px; }
 .ct-nav, .ct-nav__list, .ct-nav__logo, .ct-header__hero, .ct-header__hero-title, .ct-portfolio__container, .ct-portfolio__item-text, .ct-portfolio__links, .ct-portfolio__link, .contact-info { display: flex; flex-direction: row; }
 
@@ -81,6 +82,7 @@ section { max-width: 1250px; margin: 0 auto; padding-top: 50px; }
 .ct-testimonials__item-text { font-style: italic; }
 
 /* All */
+.ct-text { max-width: 800px; margin: 0 auto; }
 .ct-main__hero-heading { overflow: hidden; position: relative; height: 400px; }
 .ct-main__hero-heading, .ct-main__hero-overlay { display: flex; justify-content: center; align-items: center; }
 .ct-main__hero-heading img { object-fit: cover; width: 100%; height: 100%; }
