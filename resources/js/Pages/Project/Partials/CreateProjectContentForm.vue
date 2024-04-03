@@ -14,6 +14,7 @@ const props = defineProps({
 });
 
 const form = useForm({
+    _method: "PUT",
     content: props.project.content ?? [],
 });
 
@@ -26,9 +27,11 @@ const updateProject = () => {
         }
     }
     form.post(
-        route("admin.projects.contents.store", { project: props.project.slug }),
+        route("admin.projects.contents.update", {
+            project: props.project.slug,
+        }),
         {
-            errorBag: "createProjectContent",
+            errorBag: "updateProjectContent",
             preserveScroll: true,
         }
     );

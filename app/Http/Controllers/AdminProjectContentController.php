@@ -2,33 +2,49 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreProjectContentRequest;
 use App\Http\Requests\UpdateProjectContentRequest;
-use App\Models\ProjectContent;
+use App\Models\Project;
+use Illuminate\Database\Eloquent\Collection;
 
 class AdminProjectContentController extends Controller
 {
     /**
-     * Store a newly created resource in storage.
+     * Update the specified project with project content.
+     * Check uploaded project content to see if it already exists on the project before 
+     * updating it or creating as new.
+     * Any project content previously on the project that is no longer present in the form 
+     * submission will be deleted.
      */
-    public function store(StoreProjectContentRequest $request)
+    public function update(UpdateProjectContentRequest $request, Project $project): void
     {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(UpdateProjectContentRequest $request, ProjectContent $projectContent)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(ProjectContent $projectContent)
-    {
-        //
+        $formFields = $request->validated();
+        // Prepare collections
+        $updatedContents = new Collection;
+        $newContents = new Collection;
+        foreach ($formFields['content'] as $content) {
+            // Upload image file
+            if (isset($content['file'])) {
+                $content['source'] = $content['file']->store('content', 'public');
+            }
+            if (isset($content['id'])) {
+                // Update existing content
+                $existingContent = $project->content()->updateOrCreate([
+                    'id' => $content['id'],
+                ], $content);
+                $updatedContents->push($existingContent);
+            } else {
+                // Create new content
+                $newProject = $project->content()->create($content);
+                $newContents->push($newProject);
+            }
+        }
+        // Get all new and removed content
+        $diffContent = $project->content->diff($updatedContents);
+        foreach ($diffContent as $content) {
+            if (!$newContents->contains($content)) {
+                // Delete removed content
+                $content->delete();
+            }
+        }
     }
 }

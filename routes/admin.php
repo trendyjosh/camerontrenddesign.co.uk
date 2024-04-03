@@ -46,10 +46,8 @@ Route::prefix('admin')->group(function () use ($resourceRouteOptions) {
         // Site project management
         Route::resource('projects', AdminProjectController::class, $resourceRouteOptions);
         // Site project content management
-        Route::resource('projects.contents', AdminProjectContentController::class, $resourceRouteOptions)->only([
-            'store',
-            'update',
-            'destroy'
-        ]);
+        Route::controller(AdminProjectContentController::class)->group(function () {
+            Route::put('projects/{project}/contents', 'update')->name('admin.projects.contents.update');
+        });
     });
 });
