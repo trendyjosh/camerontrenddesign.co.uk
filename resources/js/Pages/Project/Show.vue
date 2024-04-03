@@ -76,6 +76,37 @@ const links = [
                                 class="w-full h-full object-cover"
                             />
                         </div>
+
+                        <h2
+                            v-if="project.content.length"
+                            class="mt-6 text-xl font-semibold text-gray-900"
+                        >
+                            Content
+                        </h2>
+                        <div class="grid grid-cols-2">
+                            <div
+                                v-for="content in project.content"
+                                class="p-5"
+                                :class="{
+                                    'col-span-2': content.full,
+                                }"
+                            >
+                                <div
+                                    v-if="
+                                        content.content !== undefined &&
+                                        content.content !== null
+                                    "
+                                >
+                                    {{ content.content }}
+                                </div>
+                                <div v-else>
+                                    <img
+                                        :src="'/storage/' + content.source"
+                                        alt=""
+                                    />
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div
                         class="flex items-center justify-end px-4 py-3 bg-gray-50 text-end sm:px-6 shadow sm:rounded-bl-md sm:rounded-br-md"

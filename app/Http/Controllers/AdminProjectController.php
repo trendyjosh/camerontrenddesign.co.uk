@@ -54,6 +54,7 @@ class AdminProjectController extends Controller
      */
     public function show(Project $project): Response
     {
+        $project->load('content');
         return Inertia::render('Project/Show', [
             'project' => $project
         ]);
