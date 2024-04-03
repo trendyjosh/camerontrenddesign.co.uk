@@ -8,7 +8,7 @@
                     <p>{{ $content->content }}</p>
                 @endif
                 @if ( $content->source != "" )
-                <img src="{{ asset($content->source) }}"
+                <img src="{{ asset('storage/' . $content->source) }}"
                      alt="{{ $content->caption }}">
                 @endif
             </div>
