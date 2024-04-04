@@ -37,6 +37,13 @@ const links = [
                             {{ project.title }}
                         </p>
 
+                        <h2 class="mt-6 text-xl font-semibold text-gray-900">
+                            Status
+                        </h2>
+                        <p class="text-lg font-medium text-gray-900">
+                            {{ project.status ? "Live" : "Draft" }}
+                        </p>
+
                         <h2
                             v-if="project.hero"
                             class="mt-6 text-xl font-semibold text-gray-900"

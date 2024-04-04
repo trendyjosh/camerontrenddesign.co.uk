@@ -13,6 +13,7 @@ const props = defineProps({
             <tr class="border-b">
                 <th class="p-4">Id</th>
                 <th class="p-4">Title</th>
+                <th class="p-4">Status</th>
                 <th class="p-4">Action</th>
             </tr>
         </thead>
@@ -20,6 +21,9 @@ const props = defineProps({
             <tr v-for="project in projects" class="hover:bg-slate-100">
                 <td class="p-4 pt-2 pb-2">{{ project.id }}</td>
                 <td class="p-4 pt-2 pb-2">{{ project.title }}</td>
+                <td class="p-4 pt-2 pb-2">
+                    {{ project.status ? "Live" : "Draft" }}
+                </td>
                 <td class="p-4 pt-2 pb-2">
                     <SecondaryButtonLink
                         class="mr-3"
