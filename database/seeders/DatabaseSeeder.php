@@ -23,7 +23,7 @@ class DatabaseSeeder extends Seeder
             Page::create([
                 'title' => $title,
                 'sub_title' => $subTitle,
-                'hero' => 'media/garden_care.jpg'
+                'hero' => ''
             ]);
         }
     }
