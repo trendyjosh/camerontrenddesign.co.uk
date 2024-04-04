@@ -11,7 +11,13 @@ class ProjectController extends Controller
     /**
      * Show the project.
      */
-    public function show(Project $project): View {
+    public function show(Project $project): View
+    {
+        if (!$project->status) {
+            // Error if project is not active
+            abort(404, 'Project not found');
+        }
+
         // Eager load project content
         $project->load('content');
 
