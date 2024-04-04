@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\UpdateProjectContentRequest;
 use App\Models\Project;
 use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Support\Facades\Storage;
 
 class AdminProjectContentController extends Controller
 {
@@ -47,6 +48,10 @@ class AdminProjectContentController extends Controller
         $diffContent = $project->content->diff($updatedContents);
         foreach ($diffContent as $content) {
             if (!$newContents->contains($content)) {
+                if ($content->source) {
+                    // Delete image from storage
+                    Storage::disk('public')->delete($content->source);
+                }
                 // Delete removed content
                 $content->delete();
             }
