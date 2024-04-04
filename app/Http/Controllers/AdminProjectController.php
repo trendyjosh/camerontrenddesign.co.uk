@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreProjectRequest;
+use App\Http\Requests\UpdateProjectPositionsRequest;
 use App\Http\Requests\UpdateProjectRequest;
 use App\Models\Project;
 use Illuminate\Http\RedirectResponse;
@@ -124,5 +125,32 @@ class AdminProjectController extends Controller
         return view('project', [
             'project' => $project
         ]);
+    }
+
+    /**
+     * Show the list of projects and reorder them.
+     */
+    public function editOrder(): Response
+    {
+        $projects = Project::where('status', 1)->orderBy('position', 'asc')->get();
+        return Inertia::render('Project/Order', [
+            'projects' => $projects
+        ]);
+    }
+
+    /**
+     * Update projects' positions with new values.
+     */
+    public function updateOrder(UpdateProjectPositionsRequest $request): RedirectResponse
+    {
+        $formFields = $request->validated();
+        $position = 0;
+        foreach ($formFields['projects'] as $formProject) {
+            $project = Project::find($formProject['id']);
+            $project->position = $position;
+            $project->save();
+            $position++;
+        }
+        return redirect()->route('admin.projects.index')->with('message', 'Project order updated successfully.');
     }
 }

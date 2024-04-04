@@ -39,10 +39,12 @@ Route::prefix('admin')->group(function () use ($resourceRouteOptions) {
             'destroy'
         ]);
         // Site project management
-        Route::resource('projects', AdminProjectController::class, $resourceRouteOptions);
         Route::controller(AdminProjectController::class)->group(function () {
+            Route::get('projects/re-order', 'editOrder')->name('admin.projects.edit-order');
+            Route::put('projects/re-order', 'updateOrder')->name('admin.projects.update-order');
             Route::get('projects/{project}/preview', 'preview')->name('admin.projects.preview');
         });
+        Route::resource('projects', AdminProjectController::class, $resourceRouteOptions);
         // Site project content management
         Route::controller(AdminProjectContentController::class)->group(function () {
             Route::put('projects/{project}/contents', 'update')->name('admin.projects.contents.update');

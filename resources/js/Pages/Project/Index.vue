@@ -3,6 +3,7 @@ import AppLayout from "@/Layouts/AppLayout.vue";
 import Breadcrumbs from "@/Components/Breadcrumbs.vue";
 import PrimaryButtonLink from "@/Components/PrimaryButtonLink.vue";
 import ProjectsTable from "@/Pages/Project/Partials/ProjectsTable.vue";
+import SecondaryButtonLink from "@/Components/SecondaryButtonLink.vue";
 
 const props = defineProps({
     projects: Array,
@@ -18,6 +19,12 @@ const props = defineProps({
                 >
                     Projects
                 </h2>
+                <SecondaryButtonLink
+                    class="mr-3"
+                    :href="route('admin.projects.edit-order')"
+                >
+                    Re-Order
+                </SecondaryButtonLink>
                 <PrimaryButtonLink :href="route('admin.projects.create')">
                     Create
                 </PrimaryButtonLink>
