@@ -162,6 +162,8 @@ section { max-width: 1250px; margin: 0 auto; padding-top: 50px; }
 .ct-select--hide { display: none; }
 .ct-select__items div:hover, .ct-select__item--selected { background-color: rgba(0, 0, 0, 0.1); }
 
+/* HTTP Errors */
+.ct-error { padding-top: 250px; padding-bottom: 150px; }
 
 /* Footer */
 .ct-footer { padding: 50px 100px; box-shadow: 0 0 10px rgb(0 0 0 / 30%); }

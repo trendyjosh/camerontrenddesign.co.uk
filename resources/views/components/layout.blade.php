@@ -21,7 +21,7 @@
 </head>
 <body>
 <main class="container">
-    <x-nav :index="isset($index)" />
+    <x-nav :index="isset($index)" :error="isset($error)" />
     {{ $slot }}
     <footer class="ct-footer">
         <div class="ct-footer__contact">
