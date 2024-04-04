@@ -18,7 +18,7 @@ class AdminProjectController extends Controller
      */
     public function index(): Response
     {
-        $projects = Project::all();
+        $projects = Project::orderBy('status', 'desc')->get();
         return Inertia::render('Project/Index', [
             'projects' => $projects
         ]);
