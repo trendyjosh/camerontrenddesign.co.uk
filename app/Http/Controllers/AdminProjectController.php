@@ -7,6 +7,7 @@ use App\Http\Requests\UpdateProjectRequest;
 use App\Models\Project;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\View\View;
 use Inertia\Inertia;
 use Inertia\Response;
 
@@ -110,5 +111,18 @@ class AdminProjectController extends Controller
         $project->delete();
 
         return redirect()->route('admin.projects.index')->with('message', 'Project deleted.');
+    }
+
+    /**
+     * Show the project as it appears on the front-end site.
+     */
+    public function preview(Project $project): View
+    {
+        // Eager load project content
+        $project->load('content');
+
+        return view('project', [
+            'project' => $project
+        ]);
     }
 }

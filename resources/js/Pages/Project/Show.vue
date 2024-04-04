@@ -2,6 +2,7 @@
 import AppLayout from "@/Layouts/AppLayout.vue";
 import Breadcrumbs from "@/Components/Breadcrumbs.vue";
 import PrimaryButtonLink from "@/Components/PrimaryButtonLink.vue";
+import SecondaryButtonLink from "@/Components/SecondaryButtonLink.vue";
 
 const props = defineProps({
     project: Object,
@@ -109,8 +110,16 @@ const links = [
                         </div>
                     </div>
                     <div
-                        class="flex items-center justify-end px-4 py-3 bg-gray-50 text-end sm:px-6 shadow sm:rounded-bl-md sm:rounded-br-md"
+                        class="flex items-center justify-end px-4 py-3 gap-3 bg-gray-50 text-end sm:px-6 shadow sm:rounded-bl-md sm:rounded-br-md"
                     >
+                        <SecondaryButtonLink
+                            :href="
+                                route('admin.projects.preview', {
+                                    project: project.slug,
+                                })
+                            "
+                            >Preview</SecondaryButtonLink
+                        >
                         <PrimaryButtonLink
                             :href="
                                 route('admin.projects.edit', {

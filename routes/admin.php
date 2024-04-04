@@ -45,6 +45,9 @@ Route::prefix('admin')->group(function () use ($resourceRouteOptions) {
         ]);
         // Site project management
         Route::resource('projects', AdminProjectController::class, $resourceRouteOptions);
+        Route::controller(AdminProjectController::class)->group(function () {
+            Route::get('projects/{project}/preview', 'preview')->name('admin.projects.preview');
+        });
         // Site project content management
         Route::controller(AdminProjectContentController::class)->group(function () {
             Route::put('projects/{project}/contents', 'update')->name('admin.projects.contents.update');

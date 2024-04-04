@@ -1,5 +1,6 @@
 <script setup>
 import PrimaryButtonLink from "@/Components/PrimaryButtonLink.vue";
+import SecondaryButtonLink from "@/Components/SecondaryButtonLink.vue";
 
 const props = defineProps({
     projects: Array,
@@ -20,6 +21,15 @@ const props = defineProps({
                 <td class="p-4 pt-2 pb-2">{{ project.id }}</td>
                 <td class="p-4 pt-2 pb-2">{{ project.title }}</td>
                 <td class="p-4 pt-2 pb-2">
+                    <SecondaryButtonLink
+                        class="mr-3"
+                        :href="
+                            route('admin.projects.preview', {
+                                project: project.slug,
+                            })
+                        "
+                        >Preview</SecondaryButtonLink
+                    >
                     <PrimaryButtonLink
                         :href="
                             route('admin.projects.show', {
