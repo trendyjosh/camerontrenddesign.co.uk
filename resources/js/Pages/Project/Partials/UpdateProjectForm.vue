@@ -8,6 +8,7 @@ import InputLabel from "@/Components/InputLabel.vue";
 import PrimaryButton from "@/Components/PrimaryButton.vue";
 import TextInput from "@/Components/TextInput.vue";
 import ImageInput from "@/Components/ImageInput.vue";
+import Checkbox from "@/Components/Checkbox.vue";
 
 const props = defineProps({
     project: Object,
@@ -18,6 +19,7 @@ const form = useForm({
     sub_title: props.project.sub_title ?? "",
     hero: null,
     thumb: null,
+    status: props.project.status ?? 0,
 });
 
 const heroInput = ref(null);
@@ -67,6 +69,7 @@ const clearFileInput = () => {
         <template #form>
             <!-- Project Hero -->
             <div class="col-span-6 sm:col-span-4">
+                <InputLabel for="hero" value="Hero" />
                 <ImageInput
                     v-model="heroInput"
                     name="Hero"
@@ -75,6 +78,20 @@ const clearFileInput = () => {
                 />
 
                 <InputError :message="form.errors.hero" class="mt-2" />
+            </div>
+
+            <!-- Subtitle -->
+            <div class="col-span-6 sm:col-span-2">
+                <InputLabel for="status" value="Active" />
+                <input
+                    type="checkbox"
+                    class="rounded border-gray-300 text-indigo-600 shadow-sm focus:ring-indigo-500"
+                    v-model="form.status"
+                    :true-value="1"
+                    :false-value="0"
+                    id="status"
+                />
+                <InputError :message="form.errors.status" class="mt-2" />
             </div>
 
             <!-- Subtitle -->
@@ -91,7 +108,8 @@ const clearFileInput = () => {
             </div>
 
             <!-- Project Thumb -->
-            <div class="col-span-6 sm:col-span-4">
+            <div class="col-span-6 sm:col-span-3">
+                <InputLabel for="thumb" value="Thumbnail" />
                 <ImageInput
                     v-model="thumbInput"
                     name="Thumbnail"

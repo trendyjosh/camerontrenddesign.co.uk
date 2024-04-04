@@ -17,6 +17,7 @@ class UpdateProjectRequest extends FormRequest
             'hero' => ['nullable', 'image'],
             'sub_title' => ['nullable', 'string'],
             'thumb' => ['nullable', 'image'],
+            'status' => ['nullable', 'boolean'],
         ];
     }
 }
