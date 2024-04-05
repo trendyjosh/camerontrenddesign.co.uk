@@ -14,8 +14,9 @@ class PageController extends Controller
      */
     public function index(Request $request): View
     {
+        $projects = Project::where('status', 1)->get();
         return view('index', [
-            'projects' => Project::all()
+            'projects' => $projects
         ]);
     }
 
@@ -28,12 +29,12 @@ class PageController extends Controller
             'page' => $page
         ]);
     }
-//
-//    /**
-//     * Show the instagram posts page.
-//     */
-//    public function instagram(Request $request): View
-//    {
-//        //
-//    }
+    //
+    //    /**
+    //     * Show the instagram posts page.
+    //     */
+    //    public function instagram(Request $request): View
+    //    {
+    //        //
+    //    }
 }

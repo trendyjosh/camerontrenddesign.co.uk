@@ -1,4 +1,4 @@
-<header class="ct-header scrolled-up">
+<header @class([ 'ct-header' , 'scrolled-up'=> !$error ])>
     <input type="checkbox" name="burger" id="burger" class="ct-burger__input">
     <nav class="ct-nav">
         <div class="ct-nav__logo">
@@ -40,7 +40,7 @@
 </header>
 <script type="text/javascript">
     window.onscroll = () => {
-        if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80){
+        if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
             document.getElementsByClassName("ct-header")[0].classList.remove("scrolled-up");
         } else {
             document.getElementsByClassName("ct-header")[0].classList.add("scrolled-up");

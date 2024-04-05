@@ -3,12 +3,12 @@
     <section class="ct-portfolio">
         <div class="ct-portfolio__content">
             @foreach ( $project->content as $content )
-            <div class="ct-portfolio__content_item <?= $content->style . " " . $content->size; ?>">
+            <div @class(["ct-portfolio__content_item", "full" => $content->full, $content->size])>
                 @if( $content->content != "" )
                     <p>{{ $content->content }}</p>
                 @endif
                 @if ( $content->source != "" )
-                <img src="{{ asset($content->source) }}"
+                <img src="{{ asset('storage/' . $content->source) }}"
                      alt="{{ $content->caption }}">
                 @endif
             </div>

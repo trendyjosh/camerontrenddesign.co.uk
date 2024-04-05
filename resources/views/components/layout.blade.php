@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Cameron Trend</title>
-    @vite('resources/js/app.js')
+    @vite('resources/js/site.js')
     <link rel="icon" href="images/logo_thumbnail.png">
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-69SK90LTJF"></script>
@@ -21,7 +21,7 @@
 </head>
 <body>
 <main class="container">
-    <x-nav :index="isset($index)" />
+    <x-nav :error="isset($error)" />
     {{ $slot }}
     <footer class="ct-footer">
         <div class="ct-footer__contact">

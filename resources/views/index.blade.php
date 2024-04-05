@@ -1,4 +1,4 @@
-<x-layout :index="true">
+<x-layout>
     <div class="ct-header__hero">
         <img src="{{ asset('media/pink_slide.jpg') }}" alt="Flowers" class="ct-header__hero-image">
         <div class="ct-header__hero-title">
@@ -23,7 +23,7 @@
             @foreach($projects as $project)
             <a class="ct-portfolio__item" href="{{ route('projects.show', $project->slug) }}">
                 <div class="ct-portfolio__item-image">
-                    <img class="increase" src="{{ asset($project->thumb) }}" alt="{{ $project->title }}">
+                    <img class="increase" src="{{ asset('storage/' . $project->thumb) }}" alt="{{ $project->title }}">
                     <div class="ct-portfolio__item-text">
                         <h3>{{ $project->title }}</h3>
                         <h4>Kent</h4>
