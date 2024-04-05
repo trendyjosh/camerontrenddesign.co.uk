@@ -1,4 +1,4 @@
-<x-layout :index="true">
+<x-layout>
     <div class="ct-header__hero">
         <img src="{{ asset('media/pink_slide.jpg') }}" alt="Flowers" class="ct-header__hero-image">
         <div class="ct-header__hero-title">
