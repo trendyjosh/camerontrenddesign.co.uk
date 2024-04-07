@@ -26,7 +26,7 @@ class AdminProjectContentController extends Controller
         foreach ($formFields['content'] as $content) {
             // Upload image file
             if (isset($content['file'])) {
-                $content['source'] = $content['file']->store('content', 'public');
+                $content['source'] = Project::uploadContentImage($content['file']);
             }
             // Set position
             $content['position'] = $position;
