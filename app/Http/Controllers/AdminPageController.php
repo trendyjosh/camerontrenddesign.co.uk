@@ -55,7 +55,7 @@ class AdminPageController extends Controller
 
         // Get upload file path
         if (isset($formFields['hero'])) {
-            $formFields['hero'] = $request->file('hero')->store('hero', 'public');
+            $formFields['hero'] = Page::uploadHero($formFields['hero']);
         }
 
         $page->update($formFields);
