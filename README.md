@@ -14,7 +14,11 @@ The portfolio website is developed using Laravel with Blade templates and custom
 
 The admin panel is scaffolded with Laravel Jetstream using Inertia, Vue and Tailwind.
 
+## Hosting
+
 Deployment is handled by Laravel forge on a Vultr hosted server.
+
+Image optimisation is handled by [spatie/image-optimizer](https://github.com/spatie/image-optimizer) which requires that the image optimiser packages outlined in the [documentation](https://github.com/spatie/image-optimizer?tab=readme-ov-file#installation) are installed on the server for it to work.
 
 ## Future Enhancements
 
