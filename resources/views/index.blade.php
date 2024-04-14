@@ -26,7 +26,9 @@
                     <img class="increase" src="{{ asset('storage/' . $project->thumb) }}" alt="{{ $project->title }}">
                     <div class="ct-portfolio__item-text">
                         <h3>{{ $project->title }}</h3>
-                        <h4>Kent</h4>
+                        @if ($project->sub_title)
+                        <h4>{{ $project->sub_title }}</h4>
+                        @endif
                     </div>
                 </div>
             </a>
