@@ -67,6 +67,19 @@ const clearFileInput = () => {
         </template>
 
         <template #form>
+            <!-- Title -->
+            <div class="col-span-6 sm:col-span-4">
+                <InputLabel for="title" value="Title" />
+                <TextInput
+                    id="title"
+                    v-model="form.title"
+                    type="text"
+                    class="mt-1 block w-full"
+                    autocomplete="title"
+                />
+                <InputError :message="form.errors.title" class="mt-2" />
+            </div>
+
             <!-- Project Hero -->
             <div class="col-span-6 sm:col-span-4">
                 <InputLabel for="hero" value="Hero" />
