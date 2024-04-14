@@ -14,7 +14,7 @@ class PageController extends Controller
      */
     public function index(Request $request): View
     {
-        $projects = Project::where('status', 1)->get();
+        $projects = Project::where('status', 1)->orderBy('position', 'asc')->get();
         return view('index', [
             'projects' => $projects
         ]);
