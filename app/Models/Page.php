@@ -37,7 +37,7 @@ class Page extends Model
     public function slug(): Attribute
     {
         return Attribute::make(
-            get: fn (mixed $value) => strval(Str::of($this->title)->kebab()),
+            get: fn (mixed $value) => strval(Str::kebab($this->title)),
         );
     }
 
