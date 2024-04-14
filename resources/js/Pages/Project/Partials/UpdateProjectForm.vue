@@ -16,6 +16,7 @@ const props = defineProps({
 
 const form = useForm({
     _method: "PUT",
+    title: props.project.title ?? "",
     sub_title: props.project.sub_title ?? "",
     hero: null,
     thumb: null,
@@ -63,7 +64,7 @@ const clearFileInput = () => {
         <template #title>Project Details</template>
 
         <template #description>
-            Update the project sub title and hero image.
+            Update the project title, status and images.
         </template>
 
         <template #form>
@@ -93,7 +94,7 @@ const clearFileInput = () => {
                 <InputError :message="form.errors.hero" class="mt-2" />
             </div>
 
-            <!-- Subtitle -->
+            <!-- Status -->
             <div class="col-span-6 sm:col-span-2">
                 <InputLabel for="status" value="Active" />
                 <input
