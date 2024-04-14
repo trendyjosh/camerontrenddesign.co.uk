@@ -16,7 +16,8 @@ const props = defineProps({
 
 const form = useForm({
     _method: "PUT",
-    title: props.project.title ?? "",
+    id: props.project.id,
+    title: props.project.title,
     sub_title: props.project.sub_title ?? "",
     hero: null,
     thumb: null,
