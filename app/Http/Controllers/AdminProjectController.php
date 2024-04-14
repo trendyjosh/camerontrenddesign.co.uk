@@ -86,6 +86,17 @@ class AdminProjectController extends Controller
             $formFields['sub_title'] = null;
         }
 
+        // Set position
+        if (isset($formFields['status']) && $formFields['status']) {
+            if ($project->status != $formFields['status']) {
+                // Set position to next increment if newly live
+                $formFields['position'] = Project::where('status', 1)->count();
+            }
+        } else {
+            // Remove position if archived
+            $formFields['position'] = null;
+        }
+
         // Get image upload file paths
         $formFields['hero'] = isset($formFields['hero']) ? Project::uploadHero($formFields['hero']) : $project->hero;
         $formFields['thumb'] = isset($formFields['thumb']) ? Project::uploadThumb($formFields['thumb']) : $project->thumb;
