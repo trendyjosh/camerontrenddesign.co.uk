@@ -4,6 +4,7 @@ use App\Http\Controllers\PageController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\EmailController;
 use Illuminate\Support\Facades\Route;
+use Spatie\Honeypot\ProtectAgainstSpam;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,7 +24,7 @@ Route::controller(PageController::class)->group(function () {
     Route::get('/{page}', 'show')->name('page');
 });
 
-Route::controller(EmailController::class)->group(function () {
+Route::controller(EmailController::class)->middleware(ProtectAgainstSpam::class)->group(function () {
     // Submit contact form
     Route::post('send-contact-form', 'sendContactForm')->name('send-contact-form');
 });
