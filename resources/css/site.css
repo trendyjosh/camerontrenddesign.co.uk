@@ -51,7 +51,7 @@ section { max-width: 1250px; margin: 0 auto; padding-top: 50px; }
 .ct-header__hero-title, .ct-portfolio__item-text { position: absolute; flex-direction: column; color: #fff; }
 .ct-text, .ct-testimonials__item-text { font-size: 1.4rem; }
 .ct-title, .fa-brands { font-size: 2rem; }
-.ct-portfolio { font-size: 1.7rem; padding: 100px 20px 20px; }
+.ct-portfolio { font-size: 1.4rem; padding: 100px 20px 20px; }
 .ct-portfolio__container { flex-wrap: wrap; justify-content: center; }
 .ct-portfolio__item { overflow: hidden; flex-basis: 33%; padding: 20px; aspect-ratio: 1 / 1; }
 .ct-portfolio__item-text, .ct-portfolio__item-image, .ct-portfolio__item-image img { width: 100%; height: 100%; }
@@ -113,6 +113,7 @@ section { max-width: 1250px; margin: 0 auto; padding-top: 50px; }
 .ct-portfolio__content_item.full { grid-column: span 2; }
 .ct-portfolio__content_item img { width: 100%; height: 100%; object-fit: contain; }
 .ct-portfolio__content_item.cover img { object-fit: cover; }
+.ct-portfolio__text { padding: 40px; }
 .ct-portfolio__links { width: 100%; justify-content: space-between; padding: 100px 0; }
 .ct-portfolio__link { flex-direction: column; flex-wrap: wrap; flex-grow: 1; }
 .ct-portfolio__link.link-left { align-items: flex-start; align-self: flex-start; }
@@ -204,12 +205,12 @@ section { max-width: 1250px; margin: 0 auto; padding-top: 50px; }
     .ct-nav__list-item { border-top: solid 1px #d3d3d3; font-size: 1.4rem; }
     .ct-nav__list-item a { padding: 15px 20px; }
     .ct-burger__input:checked ~ .ct-nav .ct-nav__list, .ct-burger__input:checked ~ .ct-nav .ct-nav__logo-large.logo-black { display: block; }
-    .ct-footer, section { padding: 20px 10px; }
+    .ct-footer, section, .ct-portfolio__text { padding: 20px 10px; }
     .ct-footer__contact { flex-direction: column; }
     .ct-footer .contact-info a { margin: 0 5px 20px; }
     .ct-footer .contact-info i { margin: 0 15px 0; }
     .ct-footer__copyright, .ct-main__hero-heading,.ct-portfolio, section { margin: 0;}
-    .ct-portfolio { font-size: 1.2rem; }
+    .ct-portfolio { font-size: 1rem; }
     .ct-portfolio__links { flex-wrap: wrap; padding: 50px 0; }
     .ct-portfolio__link { flex-basis: 100%; padding: 20px 0; }
     .scrolled-up .ct-nav__list-item a { color: #000; }
