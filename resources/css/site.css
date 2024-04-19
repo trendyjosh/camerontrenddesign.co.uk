@@ -91,7 +91,6 @@ section { max-width: 1250px; margin: 0 auto; padding-top: 50px; }
 .ct-testimonials__item-text { font-style: italic; }
 
 /* All */
-.ct-text { max-width: 800px; margin: 0 auto; }
 .ct-main__hero-heading { overflow: hidden; position: relative; height: 400px; }
 .ct-main__hero-heading, .ct-main__hero-overlay { display: flex; justify-content: center; align-items: center; }
 .ct-main__hero-heading img { object-fit: cover; width: 100%; height: 100%; }
@@ -175,7 +174,7 @@ section { max-width: 1250px; margin: 0 auto; padding-top: 50px; }
 
 @media screen and (min-width: 950px) {
     .ct-portfolio__item:hover .ct-portfolio__item-image img { transform: scale(1.1); }
-    .ct-testimonials__item { padding: 0 5rem; }
+    .ct-testimonials__item, .ct-text { padding: 0 5rem; }
 }
 
 @media screen and (max-width: 950px) {
