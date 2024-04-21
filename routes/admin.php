@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminGeneralSettingsController;
 use App\Http\Controllers\AdminPageController;
 use App\Http\Controllers\AdminProjectContentController;
 use App\Http\Controllers\AdminProjectController;
@@ -48,6 +49,11 @@ Route::prefix('admin')->group(function () use ($resourceRouteOptions) {
         // Site project content management
         Route::controller(AdminProjectContentController::class)->group(function () {
             Route::put('projects/{project}/contents', 'update')->name('admin.projects.contents.update');
+        });
+        // Site settings
+        Route::controller(AdminGeneralSettingsController::class)->group(function () {
+            Route::get('settings', 'show')->name('admin.settings.show');
+            Route::put('settings', 'update')->name('admin.settings.update');
         });
     });
 });

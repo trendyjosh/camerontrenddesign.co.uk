@@ -26,7 +26,7 @@
     <footer class="ct-footer">
         <div class="ct-footer__contact">
             <div class="contact-info">
-                <a href="tel:07581647855">07581 647855</a><span> | </span><a href="mailto:cameron.trend@gmail.com">cameron.trend@gmail.com</a>
+                <a href="tel:{{ $site_phone }}">{{ $site_phone }}</a><span> | </span><a href="mailto:{{ $site_email }}">{{ $site_email }}</a>
             </div>
             <div class="contact-info">
                 <a href="https://www.facebook.com/camerontrendgardendesign" target="_blank"><i class="fa-brands fa-facebook"></i></a>

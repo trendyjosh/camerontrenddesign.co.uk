@@ -7,8 +7,8 @@
     </section>
     <section class="ct-contact">
         <article>
-            <p><a href="mailto:contact@camerontrenddesign.co.uk"><i class="fa-solid fa-envelope"></i> contact@camerontrenddesign.co.uk</a></p>
-            <p><a href="tel:07581647855"><i class="fa-solid fa-phone"></i> 07581 647855</a></p>
+            <p><a href="mailto:{{ $site_email }}"><i class="fa-solid fa-envelope"></i> {{ $site_email }}</a></p>
+            <p><a href="tel:{{ $site_phone }}"><i class="fa-solid fa-phone"></i> {{ $site_phone }}</a></p>
             <p class="contact-info">
                 <a href="https://www.facebook.com/camerontrendgardendesign" target="_blank"><i class="fa-brands fa-facebook"></i></a>
                 <a href="https://www.pinterest.co.uk/camerontrend/" target="_blank"><i class="fa-brands fa-pinterest"></i></a>
