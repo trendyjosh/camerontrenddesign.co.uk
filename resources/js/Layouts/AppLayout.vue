@@ -62,6 +62,11 @@ const logout = () => {
                                     Projects
                                 </NavLink>
                             </div>
+                            <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                                <NavLink :href="route('admin.settings.show')" :active="route().current('admin.settings.*')">
+                                    Settings
+                                </NavLink>
+                            </div>
                         </div>
 
                         <div class="hidden sm:flex sm:items-center sm:ms-6">
@@ -209,6 +214,9 @@ const logout = () => {
                         </ResponsiveNavLink>
                         <ResponsiveNavLink :href="route('admin.projects.index')" :active="route().current('admin.projects.*')">
                             Projects
+                        </ResponsiveNavLink>
+                        <ResponsiveNavLink :href="route('admin.settings.show')" :active="route().current('admin.settings.*')">
+                            Settings
                         </ResponsiveNavLink>
                     </div>
 
