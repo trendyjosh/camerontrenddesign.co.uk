@@ -18,7 +18,6 @@
         <article>
             <form class="ct-form" method="post" action="{{ route('send-contact-form') }}" autocomplete="off">
                 @csrf
-                @honeypot
                 <label for="email">
                     <input type="text" id="email" name="email" required placeholder=" ">
                     <span>Email</span>
@@ -39,6 +38,7 @@
                 <button class="ct-btn" type="submit" name="submit">
                     Send
                 </button>
+                @honeypot
             </form>
         </article>
     </section>
