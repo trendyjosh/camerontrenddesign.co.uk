@@ -2,7 +2,7 @@
     <x-hero :page="$page" />
     <section class="ct-about">
         <div class="ct-image">
-            <img width="400" height="719" src="{{ asset('media/cameron_title.jpg') }}" alt="Cameron Trend Headshot">
+            <img width="400" height="719" src="{{ asset('media/cameron_headshot.jpg') }}" alt="Cameron Trend Headshot">
         </div>
         <div class="ct-text">
             <p>Cameron initially started his career in horticulture working on a local vineyard in Kent. Whilst setting up his gardening and landscaping business, he then went on to study horticulture at Hadlow college. Once his gardening business reached its fifth year of trading, Cameron decided to pursue his lifelong dream of becoming a garden designer.</p>
