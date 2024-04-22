@@ -27,6 +27,6 @@ class EmailController extends Controller
             ''
         ));
 
-        return Redirect::route('contact');
+        return Redirect::route('page', ['page' => 'contact']);
     }
 }
