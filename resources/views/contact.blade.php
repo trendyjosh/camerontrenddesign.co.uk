@@ -18,7 +18,6 @@
         <article>
             <form class="ct-form" method="post" action="{{ route('send-contact-form') }}" autocomplete="off">
                 @csrf
-                @honeypot
                 <label for="email">
                     <input type="text" id="email" name="email" required placeholder=" ">
                     <span>Email</span>
@@ -36,9 +35,20 @@
                     <textarea id="body" name="body" placeholder=" " required></textarea>
                     <span>Message</span>
                 </label>
+                <div class="ct-select">
+                    <select name="heard" id="heard">
+                        <option value="" disabled selected>How did you find this site...</option>
+                        <option value="Fiend/Family">Friend/Family</option>
+                        <option value="Instagram">Instagram</option>
+                        <option value="Facebook">Facebook</option>
+                        <option value="Google">Google</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
                 <button class="ct-btn" type="submit" name="submit">
                     Send
                 </button>
+                @honeypot
             </form>
         </article>
     </section>

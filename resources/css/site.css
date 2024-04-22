@@ -142,7 +142,7 @@ section { max-width: 1250px; margin: 0 auto; padding-top: 50px; }
 .ct-form option { text-align: initial; padding: 0; }
 .ct-form label span { position: absolute; left: 3px; top: 20px; transition: 0.3s; }
 .ct-form label input:focus~span, .ct-form label textarea:focus~span, .ct-form label input:not(:placeholder-shown)~span, .ct-form label textarea:not(:placeholder-shown)~span { top: 6px; font-size: initial; }
-.ct-form input, .ct-form textarea, .ct-select { width: 100%; border: none; border-bottom: 1px solid #000000; z-index: 5; }
+.ct-form input, .ct-form textarea, .ct-select { width: 100%; border: none; border-bottom: 1px solid #000000; }
 .ct-form input:focus-visible, .ct-form textarea:focus-visible { outline: none; }
 .ct-form input, .ct-select, .ct-form textarea, .ct-form form, .ct-form label span, .ct-form button, .ct-contact p { font-size: 1.5rem; }
 .ct-form label, .ct-form input, .ct-form textarea, .ct-select--selected, .ct-select__items div { text-align: initial; }

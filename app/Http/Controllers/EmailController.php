@@ -24,7 +24,7 @@ class EmailController extends Controller
             $formData['email'],
             $formData['subject'],
             $formData['body'],
-            ''
+            $formData['heard']
         ));
 
         return Redirect::route('page', ['page' => 'contact']);
