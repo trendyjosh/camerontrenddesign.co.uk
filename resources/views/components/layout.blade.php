@@ -8,9 +8,6 @@
     <link rel="icon" href="images/logo_thumbnail.png">
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-69SK90LTJF"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/b931dfc04a.js" crossorigin="anonymous"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
