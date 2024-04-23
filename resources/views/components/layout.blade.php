@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Cameron Trend</title>
     @vite('resources/js/site.js')
-    <link rel="icon" href="{{ asset('media/logo_thumbnail.png') }}">
+    <link rel="icon" href="{{ asset('media/favicon.ico') }}">
     <!-- Font Awesome icons -->
     <script src="https://kit.fontawesome.com/b931dfc04a.js" crossorigin="anonymous"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
