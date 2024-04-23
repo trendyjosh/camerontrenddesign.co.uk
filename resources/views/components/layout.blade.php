@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Cameron Trend</title>
+    <meta name="description" content="Garden and landscape design practice based in Kent, creating bespoke designs tailored to each client and their unique requirements.">
     @vite('resources/js/site.js')
     <link rel="icon" href="{{ asset('media/favicon.ico') }}">
     <!-- Font Awesome icons -->
