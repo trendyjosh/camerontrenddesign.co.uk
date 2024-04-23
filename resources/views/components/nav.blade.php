@@ -2,7 +2,7 @@
     <input type="checkbox" name="burger" id="burger" class="ct-burger__input">
     <nav class="ct-nav">
         <div class="ct-nav__logo">
-            <a href="{{ route('landing') }}">
+            <a href="{{ route('landing') }}" aria-label="Home page">
                 <x-logo />
             </a>
         </div>
