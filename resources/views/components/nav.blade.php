@@ -3,12 +3,7 @@
     <nav class="ct-nav">
         <div class="ct-nav__logo">
             <a href="{{ route('landing') }}">
-                <img class="ct-nav__logo-large logo-white" src="{{ asset('media/white-logo.png') }}" alt="Cameron Trend Design Logo">
-                <img class="ct-nav__logo-large logo-black" src="{{ asset('media/New-Logo-Branding2.svg') }}" alt="Cameron Trend Design Logo">
-            </a>
-            <a href="{{ route('landing') }}">
-                <img class="ct-nav__logo-small logo-white" src="{{ asset('media/white-text.png') }}" alt="Cameron Trend Design Title">
-                <img class="ct-nav__logo-small logo-black" src="{{ asset('media/New-Logo-Branding1.svg') }}" alt="Cameron Trend Design Title">
+                <x-logo />
             </a>
         </div>
         <label for="burger" class="ct-burger__container">
