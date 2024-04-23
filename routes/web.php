@@ -3,6 +3,7 @@
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\EmailController;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
 use Spatie\Honeypot\ProtectAgainstSpam;
 
@@ -16,6 +17,15 @@ use Spatie\Honeypot\ProtectAgainstSpam;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+// Dynamic robots file
+Route::get('robots.txt', function () {
+    $robotsTxt = public_path('robots-staging.txt');
+    if (App::environment('production')) {
+        $robotsTxt = public_path('robots-live.txt');
+    }
+    return response(file_get_contents($robotsTxt), 200)->header('Content-Type', 'text/plain');
+});
 
 Route::controller(PageController::class)->group(function () {
     // Landing page
