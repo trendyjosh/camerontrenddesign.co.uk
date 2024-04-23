@@ -6,9 +6,10 @@
     <title>Cameron Trend</title>
     @vite('resources/js/site.js')
     <link rel="icon" href="images/logo_thumbnail.png">
+    <!-- Font Awesome icons -->
+    <script src="https://kit.fontawesome.com/b931dfc04a.js" crossorigin="anonymous"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-69SK90LTJF"></script>
-    <script src="https://kit.fontawesome.com/b931dfc04a.js" crossorigin="anonymous"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
