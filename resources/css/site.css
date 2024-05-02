@@ -187,6 +187,7 @@ section { max-width: 1250px; margin: 0 auto; padding-top: 50px; }
     .ct-portfolio__content { grid-template-columns: 1fr; grid-gap: 0; }
     .ct-portfolio__content_item.full { grid-column: initial; }
     .ct-title { font-size: 1.5rem; }
+    .ct-main__hero-heading h1 { font-size: 2.5rem; }
     .ct-text, .ct-testimonials__item-text  { padding: 0 10px; font-size: 1.2rem; }
     .ct-burger__container { display: flex; flex-direction: row-reverse; }
     .ct-nav { flex-wrap: wrap; height: auto; }
