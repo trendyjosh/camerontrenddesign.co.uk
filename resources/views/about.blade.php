@@ -11,7 +11,5 @@
             <p>Alongside Cameron’s love of sketching, most of his inspiration comes from his practical roots as a gardener. Drawing plants, trees and landscapes has taught Cameron how natural structure - when assessed in detail, can be applied to almost anything design related.</p>
         </div>
     </section>
-    <section class="section-bottom">
-        <a href="https://www.inchbald.co.uk" target="_blank"><img src="{{ asset('media/inchbald.jpg') }}" alt="Inchbald School of Design Logo"></a>
-    </section>
+    <x-awards />
 </x-layout>
