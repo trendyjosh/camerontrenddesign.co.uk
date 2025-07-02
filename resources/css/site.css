@@ -94,7 +94,8 @@ section { max-width: 1250px; margin: 0 auto; padding-top: 50px; }
 .ct-main__hero-overlay { overflow: auto; background: #00000060; position: absolute; height: 100%; width: 100%; top: 0; left: 0; flex-direction: column }
 .ct-image img { width: 100%; }
 .section-bottom { margin-bottom: 100px; padding-top: 100px; }
-.section-bottom a { display: initial; }
+.section-bottom a { display: initial; margin: 0 1.5rem; }
+.section-bottom img { max-height: 150px; }
 .ct-btn { padding: 12px; min-width: 120px; border-radius: 0; border: 1px solid #000000; background: none; cursor: pointer; transition: 0.3s; color: #000000; }
 .ct-btn:hover { background: #000000; color: #ffffff; }
 .contact-info { justify-content: center; }
