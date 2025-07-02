@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Article;
 use App\Models\Page;
 use App\Models\Project;
 use Illuminate\Http\Request;
@@ -17,6 +18,19 @@ class PageController extends Controller
         $projects = Project::where('status', 1)->orderBy('position', 'asc')->get();
         return view('index', [
             'projects' => $projects
+        ]);
+    }
+
+    /**
+     * Show the press page.
+     */
+    public function press(Request $request, Page $page): View
+    {
+        $articles = Article::where('status', 1)->get();
+
+        return view('press', [
+            'page' => $page,
+            'articles' => $articles
         ]);
     }
 

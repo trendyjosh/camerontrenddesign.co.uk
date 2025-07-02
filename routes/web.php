@@ -30,6 +30,8 @@ Route::get('robots.txt', function () {
 Route::controller(PageController::class)->group(function () {
     // Landing page
     Route::get('/', 'index')->name('landing');
+    // Press page
+    Route::get('/press', 'press')->name('press');
     // Show page
     Route::get('/{page}', 'show')->name('page');
 });
