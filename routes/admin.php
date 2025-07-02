@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminArticleController;
 use App\Http\Controllers\AdminGeneralSettingsController;
 use App\Http\Controllers\AdminPageController;
 use App\Http\Controllers\AdminProjectContentController;
@@ -55,5 +56,9 @@ Route::prefix('admin')->group(function () use ($resourceRouteOptions) {
             Route::get('settings', 'show')->name('admin.settings.show');
             Route::put('settings', 'update')->name('admin.settings.update');
         });
+        // Press article management
+        Route::resource('articles', AdminArticleController::class, $resourceRouteOptions)->except([
+            'destroy'
+        ]);
     });
 });
