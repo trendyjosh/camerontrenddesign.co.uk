@@ -147,6 +147,7 @@ section { max-width: 1250px; margin: 0 auto; padding-top: 50px; }
 .ct-form select option:disabled { color: #d3d3d3; }
 .ct-form input[type="text"], .ct-select, .ct-form textarea { flex-basis: 100%; }
 .ct-form input[type="submit"]:hover { cursor: pointer; background-color: #fff; }
+.ct-alert { color: #ff0000; }
 
 /* Custom Select */
 .ct-select select { display: none; }
