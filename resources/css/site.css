@@ -147,7 +147,8 @@ section { max-width: 1250px; margin: 0 auto; padding-top: 50px; }
 .ct-form select option:disabled { color: #d3d3d3; }
 .ct-form input[type="text"], .ct-select, .ct-form textarea { flex-basis: 100%; }
 .ct-form input[type="submit"]:hover { cursor: pointer; background-color: #fff; }
-.ct-alert { color: #ff0000; }
+.ct-alert__error { color: #ff0000; }
+.ct-alert__success { color: #006c0e; background-color: #dcf3d7; padding: 12px; border: #006c0e 1px solid; }
 
 /* Custom Select */
 .ct-select select { display: none; }
