@@ -27,6 +27,6 @@ class EmailController extends Controller
             $formData['heard']
         ));
 
-        return Redirect::route('page', ['page' => 'contact'])->with('success', 'Email sent successfully');
+        return Redirect::route('page', ['page' => 'contact'])->with('success', 'Enquiry sent successfully');
     }
 }
