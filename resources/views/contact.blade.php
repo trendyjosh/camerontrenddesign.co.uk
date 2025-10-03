@@ -23,7 +23,7 @@
                 @csrf
                 <label for="email">
                     <input type="text" id="email" name="email" required placeholder=" ">
-                    <span>Email</span>
+                    <span>Your email</span>
                     @error('email')
                         <div class="ct-alert__error">{{ $message }}</div>
                     @enderror
