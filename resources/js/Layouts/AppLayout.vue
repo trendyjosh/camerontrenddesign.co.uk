@@ -43,6 +43,11 @@ const navLinks = [
         'active': route().current('admin.projects.*'),
     },
     {
+        'title': 'Articles',
+        'route': route('admin.articles.index'),
+        'active': route().current('admin.articles.*'),
+    },
+    {
         'title': 'Settings',
         'route': route('admin.settings.show'),
         'active': route().current('admin.settings.*'),
