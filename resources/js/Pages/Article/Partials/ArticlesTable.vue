@@ -1,5 +1,6 @@
 <script setup>
 import PrimaryButtonLink from "@/Components/PrimaryButtonLink.vue";
+import Status from "@/Components/Status.vue";
 
 const props = defineProps({
     articles: Array,
@@ -21,7 +22,7 @@ const props = defineProps({
                 <td class="p-4 pt-2 pb-2">{{ article.id }}</td>
                 <td class="p-4 pt-2 pb-2">{{ article.title }}</td>
                 <td class="p-4 pt-2 pb-2">
-                    {{ article.status == 1 ? "Live" : "Archived" }}
+                    <Status :isLive="article.status" />
                 </td>
                 <td class="p-4 pt-2 pb-2">
                     <PrimaryButtonLink

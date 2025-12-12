@@ -1,6 +1,7 @@
 <script setup>
 import PrimaryButtonLink from "@/Components/PrimaryButtonLink.vue";
 import SecondaryButtonLink from "@/Components/SecondaryButtonLink.vue";
+import Status from "@/Components/Status.vue";
 
 const props = defineProps({
     projects: Array,
@@ -22,16 +23,7 @@ const props = defineProps({
                 <td class="p-4 pt-2 pb-2">{{ project.id }}</td>
                 <td class="p-4 pt-2 pb-2">{{ project.title }}</td>
                 <td class="p-4 pt-2 pb-2">
-                    <span
-                        class="rounded-md px-2 py-1"
-                        :class="{
-                            'bg-green-50 text-green-700 ring-1 ring-inset ring-green-600':
-                                project.status,
-                            'bg-red-50 text-red-700 ring-1 ring-inset ring-red-600':
-                                !project.status,
-                        }"
-                        >{{ project.status ? "Live" : "Draft" }}</span
-                    >
+                    <Status :isLive="project.status" />
                 </td>
                 <td class="p-4 pt-2 pb-2">
                     <SecondaryButtonLink

@@ -2,6 +2,7 @@
 import AppLayout from "@/Layouts/AppLayout.vue";
 import Breadcrumbs from "@/Components/Breadcrumbs.vue";
 import PrimaryButtonLink from "@/Components/PrimaryButtonLink.vue";
+import Status from "@/Components/Status.vue";
 
 const props = defineProps({
     article: Object,
@@ -36,6 +37,13 @@ const links = [
                             {{ article.title }}
                         </p>
 
+                        <h2 class="mt-6 text-xl font-semibold text-gray-900">
+                            Status
+                        </h2>
+                        <p class="text-lg font-medium text-gray-900">
+                            <Status :isLive="article.status" />
+                        </p>
+
                         <h2
                             v-if="article.image"
                             class="mt-6 text-xl font-semibold text-gray-900"
@@ -65,13 +73,6 @@ const links = [
                         </h2>
                         <p class="text-lg font-medium text-gray-900">
                             {{ article.link }}
-                        </p>
-
-                        <h2 class="mt-6 text-xl font-semibold text-gray-900">
-                            Status
-                        </h2>
-                        <p class="text-lg font-medium text-gray-900">
-                            {{ article.status == 1 ? "Live" : "Archived" }}
                         </p>
                     </div>
                     <div
