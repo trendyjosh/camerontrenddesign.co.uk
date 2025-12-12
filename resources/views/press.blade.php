@@ -1,9 +1,6 @@
 <x-layout>
     <x-hero :page="$page" />
     <section class="ct-article">
-        <div class="ct-title">
-            <h2>Press Features</h2>
-        </div>
         <div class="ct-article__container">
             @foreach($articles as $article)
             <div class="ct-article__item">

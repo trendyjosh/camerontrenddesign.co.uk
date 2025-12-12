@@ -24,8 +24,10 @@ class PageController extends Controller
     /**
      * Show the press page.
      */
-    public function press(Request $request, Page $page): View
+    public function press(Request $request): View
     {
+        $page = Page::where('title', 'Press Features')->first();
+
         $articles = Article::where('status', 1)->get();
 
         return view('press', [
