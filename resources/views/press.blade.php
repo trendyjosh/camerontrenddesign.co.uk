@@ -12,7 +12,7 @@
                     <p>{{ $article->description }}</p>
                 </div>
                 @if( $article->link )
-                <a class="ct-btn" href="{{ $article->link }}">Read more</a>
+                <a class="ct-btn" href="{{ $article->link }}">Read more &UpperRightArrow;</a>
                 @endif
             </div>
             @endforeach
