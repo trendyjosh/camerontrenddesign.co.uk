@@ -24,6 +24,9 @@
             <li class="ct-nav__list-item">
                 <a href="{{ route('page', 'services') }}" class="menu menu-top">Services</a>
             </li>
+            <li class="ct-nav__list-item">
+                <a href="{{ route('press') }}" class="menu menu-top">Press</a>
+            </li>
             {{-- <li class="ct-nav__list-item">
                 <a href="{{ route('instagram') }}" class="menu menu-top">Instagram</a>
             </li> --}}
