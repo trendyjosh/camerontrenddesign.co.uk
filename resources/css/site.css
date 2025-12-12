@@ -102,6 +102,7 @@ section { max-width: 1250px; margin: 0 auto; padding-top: 50px; }
 .contact-info a { margin: 0 20px; }
 
 /* Press Pages */
+.ct-article__container { margin-bottom: 100px; }
 .ct-article__item { flex-basis: 25%; padding: 20px; }
 .ct-article__item-image img { max-width: 100%; }
 .ct-article__item-text h3, .ct-article__item-text p { text-align: left; }
