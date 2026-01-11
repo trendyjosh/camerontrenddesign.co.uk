@@ -54,6 +54,7 @@ Route::prefix('admin')->group(function () use ($resourceRouteOptions) {
         Route::controller(AdminGeneralSettingsController::class)->group(function () {
             Route::get('settings', 'show')->name('admin.settings.show');
             Route::put('settings', 'update')->name('admin.settings.update');
+            Route::put('settings/social', 'updateSocial')->name('admin.settings.update-social');
         });
     });
 });
