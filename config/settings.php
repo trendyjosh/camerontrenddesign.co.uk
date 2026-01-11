@@ -1,6 +1,7 @@
 <?php
 
 use App\Settings\GeneralSettings;
+use App\Settings\SocialSettings;
 
 return [
 
@@ -9,7 +10,8 @@ return [
      * put them (manually) here.
      */
     'settings' => [
-        GeneralSettings::class
+        GeneralSettings::class,
+        SocialSettings::class,
     ],
 
     /*

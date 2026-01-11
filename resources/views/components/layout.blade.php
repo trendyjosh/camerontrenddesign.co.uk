@@ -28,9 +28,18 @@
                 <a href="tel:{{ $site_phone }}">{{ $site_phone }}</a><span> | </span><a href="mailto:{{ $site_email }}">{{ $site_email }}</a>
             </div>
             <div class="contact-info">
-                <a href="https://www.facebook.com/camerontrendgardendesign" target="_blank" aria-label="Facebook page"><i class="fa-brands fa-facebook"></i></a>
-                <a href="https://www.pinterest.co.uk/camerontrend/" target="_blank" aria-label="Pinterest page"><i class="fa-brands fa-pinterest"></i></a>
-                <a href="https://www.instagram.com/camerontrenddesign/" target="_blank" aria-label="Instagram page"><i class="fa-brands fa-instagram"></i></a>
+                @if ($site_facebook)
+                    <a href="{{ $site_facebook }}" target="_blank" aria-label="Facebook page"><i class="fa-brands fa-facebook"></i></a>
+                @endif
+                @if ($site_pinterest)
+                    <a href="{{ $site_pinterest }}" target="_blank" aria-label="Pinterest page"><i class="fa-brands fa-pinterest"></i></a>
+                @endif
+                @if ($site_linkedin)
+                    <a href="{{ $site_linkedin }}" target="_blank" aria-label="LinkedIn page"><i class="fa-brands fa-linkedin"></i></a>
+                @endif
+                @if ($site_instagram)
+                    <a href="{{ $site_instagram }}" target="_blank" aria-label="Instagram page"><i class="fa-brands fa-instagram"></i></a>
+                @endif
             </div>
         </div>
         <div class="ct-footer__copyright">
