@@ -17,10 +17,16 @@
         </article>
         <article>
             <form class="ct-form" method="post" action="{{ route('send-contact-form') }}" autocomplete="off">
+                @if(Session::has('success'))
+                    <div class="ct-alert__success">{{ Session::get('success') }}</div>
+                @endif
                 @csrf
                 <label for="email">
                     <input type="text" id="email" name="email" required placeholder=" ">
-                    <span>Email</span>
+                    <span>Your email</span>
+                    @error('email')
+                        <div class="ct-alert__error">{{ $message }}</div>
+                    @enderror
                 </label>
                 <div class="ct-select">
                     <select name="subject" id="subject" required>
@@ -30,10 +36,16 @@
                         <option value="Planting Plan">Planting Plan</option>
                         <option value="General Enquiry">General Enquiry</option>
                     </select>
+                    @error('subject')
+                        <div class="ct-alert__error">{{ $message }}</div>
+                    @enderror
                 </div>
                 <label for="body">
                     <textarea id="body" name="body" placeholder=" " required></textarea>
                     <span>Message</span>
+                    @error('body')
+                        <div class="ct-alert__error">{{ $message }}</div>
+                    @enderror
                 </label>
                 <div class="ct-select">
                     <select name="heard" id="heard">
@@ -44,6 +56,9 @@
                         <option value="Google">Google</option>
                         <option value="Other">Other</option>
                     </select>
+                    @error('heard')
+                        <div class="ct-alert__error">{{ $message }}</div>
+                    @enderror
                 </div>
                 <button class="ct-btn" type="submit" name="submit">
                     Send

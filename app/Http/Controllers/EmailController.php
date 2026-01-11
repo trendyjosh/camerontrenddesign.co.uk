@@ -20,13 +20,13 @@ class EmailController extends Controller
         $formData = $request->validated();
 
         // Send contact email
-        Mail::to('contact@camerontrenddesign.co.uk')->send(new EnquiryMail(
+        Mail::to(config('mail.to.address'))->send(new EnquiryMail(
             $formData['email'],
             $formData['subject'],
             $formData['body'],
             $formData['heard']
         ));
 
-        return Redirect::route('page', ['page' => 'contact']);
+        return Redirect::route('page', ['page' => 'contact'])->with('success', 'Enquiry sent successfully');
     }
 }
