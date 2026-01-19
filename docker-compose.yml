@@ -5,6 +5,7 @@ services:
             dockerfile: Dockerfile
             args:
                 WWWGROUP: '${WWWGROUP}'
+                NODE_VERSION: '22'
         image: sail-8.3/cameron-trend
         extra_hosts:
             - 'host.docker.internal:host-gateway'
