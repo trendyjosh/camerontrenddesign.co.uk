@@ -3,6 +3,7 @@ import AppLayout from "@/Layouts/AppLayout.vue";
 import Breadcrumbs from "@/Components/Breadcrumbs.vue";
 import PrimaryButtonLink from "@/Components/PrimaryButtonLink.vue";
 import SecondaryButtonLink from "@/Components/SecondaryButtonLink.vue";
+import Status from "@/Components/Status.vue";
 
 const props = defineProps({
     project: Object,
@@ -41,7 +42,7 @@ const links = [
                             Status
                         </h2>
                         <p class="text-lg font-medium text-gray-900">
-                            {{ project.status ? "Live" : "Draft" }}
+                            <Status :isLive="project.status" />
                         </p>
 
                         <h2

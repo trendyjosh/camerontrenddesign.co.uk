@@ -25,6 +25,34 @@ const switchToTeam = (team) => {
 const logout = () => {
     router.post(route('logout'));
 };
+
+const navLinks = [
+    {
+        'title': 'Dashboard',
+        'route': route('dashboard'),
+        'active': route().current('dashboard'),
+    },
+    {
+        'title': 'Pages',
+        'route': route('admin.pages.index'),
+        'active': route().current('admin.pages.*'),
+    },
+    {
+        'title': 'Projects',
+        'route': route('admin.projects.index'),
+        'active': route().current('admin.projects.*'),
+    },
+    {
+        'title': 'Articles',
+        'route': route('admin.articles.index'),
+        'active': route().current('admin.articles.*'),
+    },
+    {
+        'title': 'Settings',
+        'route': route('admin.settings.show'),
+        'active': route().current('admin.settings.*'),
+    },
+];
 </script>
 
 <template>
@@ -47,24 +75,9 @@ const logout = () => {
                             </div>
 
                             <!-- Navigation Links -->
-                            <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                                <NavLink :href="route('dashboard')" :active="route().current('dashboard')">
-                                    Dashboard
-                                </NavLink>
-                            </div>
-                            <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                                <NavLink :href="route('admin.pages.index')" :active="route().current('admin.pages.*')">
-                                    Pages
-                                </NavLink>
-                            </div>
-                            <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                                <NavLink :href="route('admin.projects.index')" :active="route().current('admin.projects.*')">
-                                    Projects
-                                </NavLink>
-                            </div>
-                            <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                                <NavLink :href="route('admin.settings.show')" :active="route().current('admin.settings.*')">
-                                    Settings
+                            <div v-for="navLink in navLinks" class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                                <NavLink :href="navLink.route" :active="navLink.active">
+                                    {{ navLink.title }}
                                 </NavLink>
                             </div>
                         </div>
@@ -206,17 +219,8 @@ const logout = () => {
                 <!-- Responsive Navigation Menu -->
                 <div :class="{'block': showingNavigationDropdown, 'hidden': ! showingNavigationDropdown}" class="sm:hidden">
                     <div class="pt-2 pb-3 space-y-1">
-                        <ResponsiveNavLink :href="route('dashboard')" :active="route().current('dashboard')">
-                            Dashboard
-                        </ResponsiveNavLink>
-                        <ResponsiveNavLink :href="route('admin.pages.index')" :active="route().current('admin.pages.*')">
-                            Pages
-                        </ResponsiveNavLink>
-                        <ResponsiveNavLink :href="route('admin.projects.index')" :active="route().current('admin.projects.*')">
-                            Projects
-                        </ResponsiveNavLink>
-                        <ResponsiveNavLink :href="route('admin.settings.show')" :active="route().current('admin.settings.*')">
-                            Settings
+                        <ResponsiveNavLink v-for="navLink in navLinks" :href="navLink.route" :active="navLink.active">
+                            {{ navLink.title }}
                         </ResponsiveNavLink>
                     </div>
 
