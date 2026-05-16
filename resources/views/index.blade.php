@@ -36,6 +36,12 @@
                         </div>
                     </div>
                 </a>
+                <div class="ct-portfolio__heading">
+                    <h3>{{ $project->title }}</h3>
+                    @if ($project->sub_title)
+                        <h4>{{ $project->sub_title }}</h4>
+                    @endif
+                </div>
             @endforeach
         </div>
     </section>
