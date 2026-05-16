@@ -9,20 +9,18 @@
     </div>
     <section>
         <div class="ct-text">
-            <p>Cameron Trend Design is a garden and landscape design practice based in Kent, covering the South East.
-            </p>
-            <p>With over 8 years’ horticultural experience, Cameron has gained an in-depth knowledge of plants, outdoor
-                spaces and how they impact our modern-day, busy lifestyles. Combining his creative passion for art and
-                horticulture he creates bespoke designs tailored to his clients and their requirements.</p>
-            <p>All aspects of garden and landscape design are covered; from small planting schemes, to full scale garden
-                estate plans, following the process through to tender.</p>
-            <p>Please take your time to look through the website. Do not hesitate to contact Cameron for further
-                enquiries.</p>
+            <p>Imagine stepping into a garden that feels calm, considered and completely tailored to the way you live.
+                Cameron creates modern outdoor spaces that balance beauty with purpose, blending an artistic eye with
+                deep horticultural knowledge. Based in Kent and working throughout the South East, his work focuses on
+                gardens that enrich daily life, whether that means a quiet retreat after work, a space to entertain or
+                planting that brings joy through the seasons.</p>
+            <p>Explore Cameron's portfolio to see how thoughtful design can reshape an outdoor space, and feel free to
+                get in touch to discuss your own project.</p>
         </div>
     </section>
     <section class="ct-portfolio" id="projects">
         <div class="ct-title">
-            <h2>Current Projects</h2>
+            <h2>Selected Works</h2>
         </div>
         <div class="ct-portfolio__container">
             @foreach ($projects as $project)
@@ -47,13 +45,13 @@
         </div>
         <div class="ct-testimonials__container">
             <div class="ct-testimonials__item">
-                <p class="ct-testimonials__item-text">"Cameron instinctively understood what had to be done in a
-                    particular small awkward area of my garden. He soon realised what I liked and I was included in the
-                    whole process of the design from start to finish and it changed regularly! I was shown many virtual
-                    images of the finished area until I was happy. He ordered quality plants and planted them when he
-                    said he would. They look good and I am looking forward to seeing them mature. I would highly
-                    recommend him."</p>
-                <p>Client, Tonbridge</p>
+                <p class="ct-testimonials__item-text">"Cameron's design helped us turn our dull, green box of a
+                    new-build back garden into a stylish, well- composed space we absolutely love to spend time and
+                    entertain our guests in. We gave him a detailed, challenging brief on what we were after, and he
+                    responded with a proposal that addressed our every single need - resulting in a garden that is
+                    absolutely stunning, but at the same practical, low maintenance, great for family life and Sunday
+                    barbecues, and that allows us to maximise the sunlight we get throughout the day..."</p>
+                <p>Client, South East</p>
             </div>
         </div>
     </section>
