@@ -29,7 +29,7 @@ class DatabaseSeeder extends Seeder
         //Create base site pages
         $standardPages = [
             'About' => null,
-            'Services' => 'The creative endeavour to implement visual ideas into gardens',
+            'Process' => 'The creative endeavour to implement visual ideas into gardens',
             'Contact' => null,
         ];
         foreach ($standardPages as $title => $subTitle) {
