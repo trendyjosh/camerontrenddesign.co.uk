@@ -22,7 +22,7 @@
                 <a href="{{ route('landing') }}#projects" class="menu menu-top">Portfolio</a>
             </li>
             <li class="ct-nav__list-item">
-                <a href="{{ route('page', 'services') }}" class="menu menu-top">Services</a>
+                <a href="{{ route('page', 'services') }}" class="menu menu-top">Process</a>
             </li>
             {{-- <li class="ct-nav__list-item">
                 <a href="{{ route('instagram') }}" class="menu menu-top">Instagram</a>
