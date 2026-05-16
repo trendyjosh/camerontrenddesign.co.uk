@@ -1,4 +1,4 @@
-<header @class([ 'ct-header' , 'scrolled-up'=> !$error ])>
+<header @class(['ct-header', 'scrolled-up' => !$error])>
     <input type="checkbox" name="burger" id="burger" class="ct-burger__input">
     <nav class="ct-nav">
         <div class="ct-nav__logo">
@@ -22,7 +22,7 @@
                 <a href="{{ route('landing') }}#projects" class="menu menu-top">Portfolio</a>
             </li>
             <li class="ct-nav__list-item">
-                <a href="{{ route('page', 'services') }}" class="menu menu-top">Services</a>
+                <a href="{{ route('page', 'process') }}" class="menu menu-top">Process</a>
             </li>
             {{-- <li class="ct-nav__list-item">
                 <a href="{{ route('instagram') }}" class="menu menu-top">Instagram</a>

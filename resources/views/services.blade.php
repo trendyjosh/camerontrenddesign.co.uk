@@ -1,5 +1,12 @@
 <x-layout>
     <x-hero :page="$page" />
+    <section>
+        <div class="ct-text">
+            <p>Every garden grows through a clear, structured process. This step by step approach lets you explore ideas
+                with confidence and ensures the final design looks beautiful and works perfectly for the way you live.
+            </p>
+        </div>
+    </section>
     <section class="ct-services">
         <div class="ct-image">
             <div id="pencilimage">
@@ -7,26 +14,33 @@
             </div>
         </div>
         <div class="ct-text">
-            <h2>Initial Meeting</h2>
-            <p>This is the first visit to the site, where we meet the client and understand their desires for the garden.</p>
-            <h2 style="">Design</h2>
-            <p>Following your brief carefully, Cameron creates the design, respecting the architecture of your house and local vernacular.</p>
+            <h2>1. Consultation</h2>
+            <p>We begin on site, walking the space together and discussing how you want to use it. This helps shape a
+                clear brief and ensures the design feels personal, practical and connected to its surroundings.</p>
+            <h2>2. Concept Design</h2>
+            <p>Early sketches outline how the garden flows and where key features sit. These ideas guide our next
+                conversation, where we refine the layout, materials, timescales and budget.</p>
         </div>
         <div class="ct-text">
-            <h2>Perspective Drawings</h2>
-            <p>The most useful way to visualise the garden and understand the feeling of the space, is through numerous hand drawn perpective sketches.</p>
+            <h2>3. Visualisation</h2>
+            <p>A scaled 3D model brings the design to life. Seeing the garden from multiple angles removes uncertainty
+                and gives you confidence in how the finished space will look and feel.</p>
         </div>
         <div class="ct-text">
-            <h2>Planting Plans</h2>
-            <p>Fully specified plans with sought after planting combinations, tailored to your desired pallet.</p>
+            <h2>4. Masterplan</h2>
+            <p>The concept develops into a detailed Masterplan with all the drawings needed for construction, including
+                setting out, hard landscaping and bespoke elements such as steps, walls, pergolas or water features.</p>
         </div>
         <div class="ct-text">
-            <h2>Build</h2>
-            <p id="bottom50">The construction, planting and styling of the garden is closely supervised by Cameron on behalf of the client.</p>
+            <h2>5. Planting Design</h2>
+            <p>A bespoke planting scheme is created to suit your style and the character of the garden. Plants are
+                selected for structure, texture and year round interest, ensuring the space matures beautifully.</p>
         </div>
         <div class="ct-text">
-            <h2>Aftercare</h2>
-            <p id="bottom50">Cameron and his highly skilled team of horticulturists offer an aftercare service. This ensures those most crucial, initial years of care are carried out to the design requirements.</p>
+            <h2>6. Construction and Delivery</h2>
+            <p>Once the design is ready, support can include tendering, contractor selection and ongoing consultation
+                during the build. Full project management is available. After completion, maintenance guidance and
+                follow up visits help your garden establish and thrive.</p>
         </div>
     </section>
     <section class="section-bottom">

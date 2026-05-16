@@ -10,14 +10,17 @@
             <p><a href="mailto:{{ $site_email }}"><i class="fa-solid fa-envelope"></i> {{ $site_email }}</a></p>
             <p><a href="tel:{{ $site_phone }}"><i class="fa-solid fa-phone"></i> {{ $site_phone }}</a></p>
             <p class="contact-info">
-                <a href="https://www.facebook.com/camerontrendgardendesign" target="_blank"><i class="fa-brands fa-facebook"></i></a>
-                <a href="https://www.pinterest.co.uk/camerontrend/" target="_blank"><i class="fa-brands fa-pinterest"></i></a>
-                <a href="https://www.instagram.com/camerontrenddesign/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.facebook.com/camerontrendgardendesign" target="_blank"><i
+                        class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.pinterest.co.uk/camerontrend/" target="_blank"><i
+                        class="fa-brands fa-pinterest"></i></a>
+                <a href="https://www.instagram.com/camerontrenddesign/" target="_blank"><i
+                        class="fa-brands fa-instagram"></i></a>
             </p>
         </article>
         <article>
             <form class="ct-form" method="post" action="{{ route('send-contact-form') }}" autocomplete="off">
-                @if(Session::has('success'))
+                @if (Session::has('success'))
                     <div class="ct-alert__success">{{ Session::get('success') }}</div>
                 @endif
                 @csrf
@@ -68,6 +71,7 @@
         </article>
     </section>
     <section class="section-bottom">
-        <a href="https://www.inchbald.co.uk" target="_blank"><img src="{{ asset('media/inchbald.jpg') }}" alt="Inchbald School of Design Logo"></a>
+        <a href="https://www.inchbald.co.uk" target="_blank"><img src="{{ asset('media/inchbald.jpg') }}"
+                alt="Inchbald School of Design Logo"></a>
     </section>
 </x-layout>
